@@ -1,0 +1,11 @@
+<p> User Profile : </p>
+<p>
+<%= @user.fname.to_s + " " +  @user.lname.to_s %>
+<br>
+<%= @user.email %>
+Enrolment type : 
+<%= "Individual" if @user.enrol == 1 %>
+<%= "Organizational" if @user.enrol == 2 %> 
+    
+</p>
+

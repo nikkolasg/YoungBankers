@@ -1,6 +1,9 @@
-class UserController < ApplicationController
+class UsersController < ApplicationController
+    def index
+        list
+    end
     def list
-        @users = User.find(:all)
+        @users = User.all
     end
     def show
         @user = User.find(params[:id])
@@ -11,7 +14,7 @@ class UserController < ApplicationController
         # can also retrive external info such as all type of organization, etc.
     end
     def create
-        @user = User.new(params[:user]) # :user object built from user inputform
+        @user = User.new(user_params) # :user object built from user inputform
         if @user.save
             redirect_to :action => 'show', :id => @user
         else
@@ -24,7 +27,8 @@ class UserController < ApplicationController
     def update ## action to save updated info about user
         @user = User.find(params[:id])
         if @user.update_attributes(params[:user])
-            redirect_to :action => 'show', :id => @user
+            redirect_to :action => 'show', :id => @user # can pass object
+            # due to natural routing for restful ressources
         else
             render  :action => 'edit'
         end
@@ -33,4 +37,10 @@ class UserController < ApplicationController
         User.find(params[:id]).destroy
         redirect_to :action => 'list'
     end
+    private
+        def user_params
+            ##TODO 
+            params.require(:user).permit(:lname,:email,:fname,:hashp,:type)
+        end
+
 end

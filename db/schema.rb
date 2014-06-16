@@ -14,12 +14,12 @@
 ActiveRecord::Schema.define(version: 20140614124111) do
 
   create_table "users", force: true do |t|
-    t.string   "hash",                   null: false
+    t.string   "hashp",                  null: false
     t.string   "lname",      limit: 50,  null: false
     t.string   "fname",      limit: 50
     t.string   "email",      limit: 100, null: false
     t.integer  "gender"
-    t.integer  "type",                   null: false
+    t.integer  "enrol",                  null: false
     t.string   "city",       limit: 50
     t.integer  "code"
     t.string   "country",    limit: 30
