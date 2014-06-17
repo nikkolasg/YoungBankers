@@ -1,11 +1,13 @@
-<%= if @users.blank? %>
+<% if @users.blank? %>
 <p>There are not any users currently in the system.</p>
-<%= else %>
+<% else %>
     <p>These are the current users in our system</p>
     <ul id="users">
-        <%= @users.each do |c| %>
-            <li> <%= puts c.fname + " " + c.lname + " " + c.email %> </li>
-            <li><%= link_to "User Profile", user_path, :id => c.id} %></li>
-        <%= end %>
+        <% @users.each do |c| %>
+            <li> 
+               <%=  line = "#{c.fname} #{c.lname} #{c.email}" %> 
+               <%= link_to "Profile" ,user_path(c) %>
+        </li>
+        <% end %>
     </ul>
 <% end %>

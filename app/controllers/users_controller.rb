@@ -40,7 +40,7 @@ class UsersController < ApplicationController
     private
         def user_params
             ##TODO 
-            params.require(:user).permit(:lname,:email,:fname,:hashp,:enrol)
+            params.require(:user).permit(:lname,:email,:fname,:enrol)
         end
 
 end
