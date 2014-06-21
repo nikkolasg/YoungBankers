@@ -10,15 +10,15 @@ class UsersController < ApplicationController
     end
     def new
         @user = User.new 
-        ##creating a new user
-        # can also retrive external info such as all type of organization, etc.
     end
+
     def create
         @user = User.new(user_params) # :user object built from user inputform
         if @user.save
-            redirect_to :action => 'show', :id => @user
+            flash[:success] = "Registration sucessfull !"
+            redirect_to @user 
         else
-            render  :action => 'new'
+            render 'new'
         end
     end
     def edit ## action to edit an user, to render edit options
@@ -40,7 +40,7 @@ class UsersController < ApplicationController
     private
         def user_params
             ##TODO 
-            params.require(:user).permit(:lname,:email,:fname,:enrol)
+            params.require(:user).permit(:lname,:email,:fname,:password,:pasword_confirmation,:enrol)
         end
 
 end

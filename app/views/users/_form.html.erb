@@ -9,7 +9,10 @@
     <%= u.text_field :email %>
     <br>
     <%= u.label "Password " %>
-    <%= u.text_field :password %>
+    <%= u.password_field :password %>
+    <br>
+    <%= u.label "Password Confirmation " %>
+    <%= u.password_field :password_confirmation %>
     <br>
     <%= u.radio_button :enrol ,1 %>
     <%= u.label "Individual" %>

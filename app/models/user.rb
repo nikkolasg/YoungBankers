@@ -3,9 +3,9 @@ class User < ActiveRecord::Base
     validates :email, presence: true, format: { with: VALID_EMAIL_REGEX},
                     uniqueness: { case_sensitive: false }
     validates :lname ,:fname , presence: true, 
-                                length: { maximum: 50}}
+                                length: { maximum: 50}
     before_save { self.email = email.downcase }
     
-    validates :password, length: { minimum: 10 , maximum: 50 }
+    validates :password, length: { minimum: 5 , maximum: 50 }
     has_secure_password #handle double confirmation & presence
 end
