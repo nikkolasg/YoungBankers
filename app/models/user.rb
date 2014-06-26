@@ -8,4 +8,7 @@ class User < ActiveRecord::Base
     
     validates :password, length: { minimum: 5 , maximum: 50 }
     has_secure_password #handle double confirmation & presence
+
+    def remember_token!
+        self.remember_token =
 end
