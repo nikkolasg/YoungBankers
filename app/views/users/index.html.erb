@@ -6,8 +6,17 @@
         <% @users.each do |c| %>
             <li> 
                <%=  line = "#{c.fname} #{c.lname} #{c.email}" %> 
-               <%= link_to "Profile" ,user_path(c) %>
+               
+               <% if signed_in? %>
+                   <% if current_user.email == c.email %>
+                        <%= "Edit Profile (todo)" %>
+                    <% end %>
+                    <%= link_to "Profile" ,user_path(c) %>
+               <% else %>
+                  (not signed)
+               <% end %>
         </li>
         <% end %>
     </ul>
 <% end %>
+<p> <%= link_to "Sign in", signin_path %> 

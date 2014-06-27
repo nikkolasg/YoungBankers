@@ -15,6 +15,8 @@ class UsersController < ApplicationController
     def create
         @user = User.new(user_params) # :user object built from user inputform
         if @user.save
+            # signin the user (token etc)
+            sign_in @user
             flash[:success] = "Registration sucessfull !"
             redirect_to @user 
         else
