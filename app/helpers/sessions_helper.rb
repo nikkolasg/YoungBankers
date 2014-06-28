@@ -14,7 +14,7 @@ module SessionsHelper
     # used to retrieve the user according to the token
     # because stateless HTTP nature, we have to...
     def current_user
-        remember_token = cookies[:remember_token]
+        return nil unless remember_token = cookies[:remember_token] 
         @current_user ||= User.find_by(remember_token: User.digest(remember_token))
     end 
 
@@ -28,5 +28,6 @@ module SessionsHelper
         current_user.update_attribute(:remember_token, User.digest(User.new_remember_token))
         cookies.delete(:remember_token)
         self.current_user = nil
+    end
 
 end

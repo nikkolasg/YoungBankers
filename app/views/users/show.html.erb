@@ -1,4 +1,11 @@
-<p> User Profile : </p>
+<p> User Profile : 
+<% if signed_in? %>
+    <%= line =  'Signed in' %>
+<% else %>
+    Not Signed in
+<% end %>
+    </p>
+    
 <p>
 <%= gravatar_for(@user) %>
 <%= @user.fname.to_s + " " +  @user.lname.to_s %>

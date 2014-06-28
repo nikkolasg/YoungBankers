@@ -9,7 +9,7 @@
                
                <% if signed_in? %>
                    <% if current_user.email == c.email %>
-                        <%= "Edit Profile (todo)" %>
+                        <%= line = "Edit Profile (todo)" %>
                     <% end %>
                     <%= link_to "Profile" ,user_path(c) %>
                <% else %>
@@ -20,3 +20,4 @@
     </ul>
 <% end %>
 <p> <%= link_to "Sign in", signin_path %> 
+<p> <%= link_to "Sign out", signout_path, method: "delete" %> </p>

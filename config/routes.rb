@@ -9,7 +9,7 @@ Rails.application.routes.draw do
 
   get 'signup' => 'users#new'
   get 'signin' => 'sessions#new'
-  get 'signout' => 'sessions#destroy'
+  delete 'signout' => 'sessions#destroy'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
