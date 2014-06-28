@@ -10,7 +10,16 @@
 <% flash.each do |k,v| %>
     <p> <%= v %> </p>
 <% end %>
-<p> <%= link_to "Sign out", signout_path, method: "delete" %> </p>
+<p>
+<% if signed_in? %>
+    <%= line =  'Signed in ' %>
+    (<%= link_to "Sign out", signout_path, method: "delete" %> )
+<% else %>
+    Not Signed in
+<% end %>
+</p>
+    
+<p>
 <%= yield %>
 <%= debug(cookies) if Rails.env.development? %>
 

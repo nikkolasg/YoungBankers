@@ -25,6 +25,13 @@ class UsersController < ApplicationController
     end
     def edit ## action to edit an user, to render edit options
         @user = User.find(params[:id])
+        ##TEST
+        if signed_in?
+            render 'edit'
+        else
+            flash [:error] = "You are not logged in Or are not the user you want to modify"
+            redirect_to :action => 'index'
+        end
     end
     def update ## action to save updated info about user
         @user = User.find(params[:id])

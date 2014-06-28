@@ -9,12 +9,11 @@
                
                <% if signed_in? %>
                    <% if current_user.email == c.email %>
-                        <%= line = "Edit Profile (todo)" %>
+                        <%= link_to "Edit Profile (todo)" %>
                     <% end %>
-                    <%= link_to "Profile" ,user_path(c) %>
-               <% else %>
-                  (not signed)
-               <% end %>
+                <% end %>
+                 <%= link_to "Profile" ,user_path(c) %>
+
         </li>
         <% end %>
     </ul>
