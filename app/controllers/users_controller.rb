@@ -64,7 +64,7 @@ class UsersController < ApplicationController
         end
         # Only admin can do the delete request (agaisnt malicious query)
         def admin_user?
-            unless current_user.admin?
+            unless (current_user && current_user.admin?)
                 flash[:error] = "You are not an admin to delete user"
                 redirect_to :action => 'index'
             end
