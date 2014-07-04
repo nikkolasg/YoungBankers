@@ -1,5 +1,5 @@
-<p> User Profile : 
-
+<h2> User Profile </h2> 
+<p> 
 <%= gravatar_for(@user) %>
 <%= @user.fname.to_s + " " +  @user.lname.to_s %>
 <br>
@@ -10,4 +10,14 @@ Enrolment type :
 <%= " Organizational" if @user.enrol == 2 %> 
 </p>
 <p> <%= link_to "Edit Profile", edit_user_path(@user) %> </p>
+
+<% if @user.articles.any? %>
+    <h2> Articles (<%= @user.articles.count %>) : </h2>
+    <ol class="articles">
+    <%= render @articles # search for _article partial and render for all array  %>
+    </ol>
+    <%= will_paginate @articles %>
+<% else %>
+    No Articles ... 
+<% end %>
 

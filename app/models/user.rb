@@ -8,10 +8,13 @@ class User < ActiveRecord::Base
     
     validates :password, length: { minimum: 5 , maximum: 50 }
     
-    has_secure_password #handle double confirmation & presence
-    
+    has_secure_password #handle double confirmation & presence   
 
     before_create :create_remember_token
+    
+    # article association
+    has_many :articles 
+    
     ## static methods  
     def User.new_remember_token
         SecureRandom.urlsafe_base64
