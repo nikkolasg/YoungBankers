@@ -18,16 +18,30 @@ module SessionsHelper
         @current_user ||= User.find_by(remember_token: User.digest(remember_token))
     end 
 
+    def current_user?(user)
+        user == current_user
+    end
     # is the user signed in ?
     def signed_in?
         !current_user.nil?
     end 
 
-
+    
     def sign_out
         current_user.update_attribute(:remember_token, User.digest(User.new_remember_token))
         cookies.delete(:remember_token)
         self.current_user = nil
+    end
+
+    ## redirection helpers
+    #call when you want redirection after an action (i.e. loggin)
+    def redirect_back(default)
+        redirect_to(session[:return_to] || default)
+        session.delete(:return_to)
+    end
+
+    def store_redirect_location(redirect=nil)
+        session[:return_to] = (redirect if !redirect.nil?) || (request.url if request.get?)
     end
 
 end

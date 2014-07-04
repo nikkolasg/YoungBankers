@@ -1,13 +1,16 @@
 class UsersController < ApplicationController
+    before_action :signed_in_user? ,      only: [:index,:edit,:update]
+    before_action :correct_user? ,   only: [:edit,:update]
+    before_action :admin_user? , only: :destroy 
+
     def index
-        list
+        @users = User.paginate(page: params[:page], :per_page => 4)
     end
-    def list
-        @users = User.all
-    end
+    
     def show
         @user = User.find(params[:id])
     end
+    
     def new
         @user = User.new 
     end
@@ -29,27 +32,46 @@ class UsersController < ApplicationController
         if signed_in?
             render 'edit'
         else
-            flash [:error] = "You are not logged in Or are not the user you want to modify"
+            flash[:error] = "You are not logged in Or are not the user you want to modify"
             redirect_to :action => 'index'
         end
     end
     def update ## action to save updated info about user
         @user = User.find(params[:id])
-        if @user.update_attributes(params[:user])
-            redirect_to :action => 'show', :id => @user # can pass object
+        if @user.update_attributes(user_params)
+            flash[:success] = "Update successful!" 
+            redirect_to  @user # can pass object
             # due to natural routing for restful ressources
         else
             render  :action => 'edit'
         end
     end 
-    def delete
+    def destroy
         User.find(params[:id]).destroy
-        redirect_to :action => 'list'
+        redirect_to :action => 'index'
     end
     private
+        def signed_in_user?
+            store_redirect_location
+            redirect_to signin_path ,notice: "You are not logged in ... " unless signed_in?
+        end
+        def correct_user?
+            @user = User.find(params[:id])
+            unless current_user?(@user)
+                flash[:error] = "You are not authorized to go on this page"
+                redirect_to :action => 'index' 
+            end
+        end
+        # Only admin can do the delete request (agaisnt malicious query)
+        def admin_user?
+            unless current_user.admin?
+                flash[:error] = "You are not an admin to delete user"
+                redirect_to :action => 'index'
+            end
+        end
         def user_params
-            ##TODO 
-            params.require(:user).permit(:lname,:email,:fname,:password,:pasword_confirmation,:enrol)
+        ##TODO 
+            params.require(:user).permit(:lname,:email,:fname,:password,:password_confirmation,:enrol)
         end
 
 end

@@ -7,7 +7,9 @@ class User < ActiveRecord::Base
     before_save { self.email = email.downcase }
     
     validates :password, length: { minimum: 5 , maximum: 50 }
+    
     has_secure_password #handle double confirmation & presence
+    
 
     before_create :create_remember_token
     ## static methods  
@@ -19,6 +21,7 @@ class User < ActiveRecord::Base
     end
 
     private 
+        
         def create_remember_token
            self.remember_token = User.digest(User.new_remember_token) 
         end

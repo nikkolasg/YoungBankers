@@ -5,4 +5,6 @@ module UsersHelper
         image_tag(grav_url, alt: "image", class: "profile_pic")
     end
 
+
+
 end

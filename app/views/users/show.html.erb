@@ -6,8 +6,8 @@
 <%= @user.email %>
 <br>
 Enrolment type : 
-<%= "Individual" if @user.enrol == 1 %>
-<%= "Organizational" if @user.enrol == 2 %> 
-    
+<%= " Individual" if @user.enrol == 1 %>
+<%= " Organizational" if @user.enrol == 2 %> 
 </p>
+<p> <%= link_to "Edit Profile", edit_user_path(@user) %> </p>
 
