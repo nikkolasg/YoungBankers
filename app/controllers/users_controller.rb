@@ -52,10 +52,6 @@ class UsersController < ApplicationController
         redirect_to :action => 'index'
     end
     private
-        def signed_in_user?
-            store_redirect_location
-            redirect_to signin_path ,notice: "You are not logged in ... " unless signed_in?
-        end
         def correct_user?
             @user = User.find(params[:id])
             unless current_user?(@user)

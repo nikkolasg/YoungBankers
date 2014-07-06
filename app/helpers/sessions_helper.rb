@@ -25,7 +25,13 @@ module SessionsHelper
     def signed_in?
         !current_user.nil?
     end 
-
+    # verify sign & redirect later after login 
+    def signed_in_user?
+        unless signed_in?
+            store_redirect_location
+            redirect_to signin_path ,notice: "You are not logged in ... "
+        end
+    end
     
     def sign_out
         current_user.update_attribute(:remember_token, User.digest(User.new_remember_token))

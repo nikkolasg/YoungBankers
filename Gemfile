@@ -29,9 +29,11 @@ gem 'spring',        group: :development
 
 # Use ActiveModel has_secure_password
 gem 'bcrypt'
-
+## automatic pagination
 gem 'will_paginate'
 gem 'bootstrap-will_paginate'
+
+gem 'rspec-rails'
 
 # Use unicorn as the app server
 # gem 'unicorn'
