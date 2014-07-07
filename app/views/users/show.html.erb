@@ -13,7 +13,7 @@ Enrolment type :
 
 <% if @user.articles.any? %>
     <h2> Articles (<%= @user.articles.count %>) : </h2>
-    <ol class="articles">
+    <ol class="articles" >
     <%= render @articles # search for _article partial and render for all array  %>
     </ol>
     <%= will_paginate @articles %>
