@@ -1,0 +1,7 @@
+<h1> HOME </h1>
+<p> Association of bankers BLA BLA BLA BULLSHIT</p>
+<% if signed_in? %>
+    <p> You are <b> signed_in </b>, then you can see all <%= link_to "users", users_path %> !</p>
+<% else %>
+   <p> You are <b> NOT </b> signed in, you should if you want to see stg... <%= link_to "Sign in", signin_path %> ! </p>
+<% end %>

@@ -35,6 +35,10 @@ gem 'bootstrap-will_paginate'
 
 gem 'rspec-rails'
 gem 'capybara' # for easy syntax test 
+
+
+gem 'bootstrap-sass'
+gem 'sprockets'
 # Use unicorn as the app server
 # gem 'unicorn'
 

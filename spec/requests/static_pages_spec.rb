@@ -2,15 +2,15 @@ require 'rails_helper'
 
 describe "Static Pages" do
   
-    
+    base_title = "Young Bankers Connect"   
     describe "Home page" do
         it "should have the content 'HOME'" do
             visit '/home'
             expect(page).to have_content('HOME')
         end
-        it "should have title 'Young Bankers | Home'" do
+        it "should have title '#{base_title}' " do
             visit '/home'
-            expect(page).to have_title('Young Bankers | Home')
+            expect(page).to have_title(base_title)
         end
   end
 
@@ -19,9 +19,9 @@ describe "Static Pages" do
             visit '/about'
             expect(page).to have_content('benefit')
         end
-        it "should have title 'Young Bankers | About'" do
+        it "should have title '#{base_title} | About'" do
             visit '/about'
-            expect(page).to have_title('Young Bankers | About')
+            expect(page).to have_title("#{base_title} | About")
         end
     end
 end
