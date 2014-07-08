@@ -12,11 +12,13 @@ Enrolment type :
 <p> <%= link_to "Edit Profile", edit_user_path(@user) %> </p>
 
 <% if @user.articles.any? %>
-    <h2> Articles (<%= @user.articles.count %>) : </h2>
-    <ol class="articles" >
-    <%= render @articles # search for _article partial and render for all array  %>
-    </ol>
-    <%= will_paginate @articles %>
+    <h2> Articles ( <%= @user.articles.count %> ) : </h2>
+    <% if !@articles.empty? %>
+        <ol class="articles">
+            <%= render @articles  %>
+        </ol>
+        <%= will_paginate @articles %>
+    <% end %>
 <% else %>
     No Articles ... 
 <% end %>

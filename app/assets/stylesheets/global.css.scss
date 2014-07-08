@@ -1,2 +1,8 @@
 
-@import "bootstrap";
+/*@import "bootstrap";*/
+.logo_image {
+    left:5px; 
+    margin-top:-10px;
+}
+/* required due to the bootstrap nav bar */
+body { padding-top: 60px; }
