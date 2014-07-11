@@ -1,0 +1,88 @@
+
+<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+        <!-- Contains brand (logo) + button to toggle if small screen size -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <%= link_to image_tag("YBC_logo.gif", class: "logo_image"), root_path, class: "navbar-brand" %>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="about.html">About</a>
+                </li>
+                <li><a href="services.html">Services</a>
+                </li>
+                <li><a href="contact.php">Contact</a>
+                </li>
+                <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Portfolio <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    <li><a href="portfolio-1-col.html">1 Column Portfolio</a>
+                    </li>
+                    <li><a href="portfolio-2-col.html">2 Column Portfolio</a>
+                    </li>
+                    <li><a href="portfolio-3-col.html">3 Column Portfolio</a>
+                    </li>
+                    <li><a href="portfolio-4-col.html">4 Column Portfolio</a>
+                    </li>
+                    <li><a href="portfolio-item.html">Single Portfolio Item</a>
+                    </li>
+                </ul>
+                </li>
+                <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Blog <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    <li><a href="blog-home-1.html">Blog Home 1</a>
+                    </li>
+                    <li><a href="blog-home-2.html">Blog Home 2</a>
+                    </li>
+                    <li><a href="blog-post.html">Blog Post</a>
+                    </li>
+                </ul>
+                </li>
+                <% if signed_in? %>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Members <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li> <%= link_to "All Members", users_path %>
+                            </li>
+                            <li> <%= link_to "Profile", current_user %>
+                            </li>
+                            <li><a href="#">Messages</a>
+                            </li>
+                            <li> <%= link_to "Sign out", signout_path , method: "delete" %>
+                            </li>
+                </ul>
+                </li>
+            <% else %>
+                <li class="dropdown" >
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"> Sign in <b class="caret"></b> </a>
+                    <div class="dropdown-menu" >
+                        <div class="navbar_login">
+                    <%= form_for(:session, url: sessions_path ) do |f| %>
+                        <div class="form-group">
+                        <%= f.text_field :email ,  autofocus: true, placeholder:"Email" %>
+                        <%= f.password_field :password,  placeholder: "Password" %>
+                        </div>
+                    <%= f.submit "Login", class:"btn btn-default" %>
+                        </div>
+                <% end %>
+                </div>
+     
+                    </div>
+                           <% end %>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</div>
+
+
