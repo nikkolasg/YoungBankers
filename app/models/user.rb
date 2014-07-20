@@ -12,8 +12,6 @@ class User < ActiveRecord::Base
 
     before_create :create_remember_token
     
-    # article association
-    has_many :articles 
     
     ## static methods  
     def User.new_remember_token

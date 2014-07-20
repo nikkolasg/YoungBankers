@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
     ## has to be signed in for all action regarding users ...
-    before_action :signed_in_user? #, only: [:index,:edit,:update]
+    before_action :signed_in_user?, except: [:new, :create] #, only: [:index,:edit,:update]
     before_action :correct_user? ,   only: [:edit,:update]
     before_action :admin_user? ,     only: :destroy 
 
@@ -31,13 +31,10 @@ class UsersController < ApplicationController
     end
     def edit ## action to edit an user, to render edit options
         @user = User.find(params[:id])
-        ##TEST
-        if signed_in?
-            render 'edit'
-        else
-            flash[:error] = "You are not logged in Or are not the user you want to modify"
-            redirect_to :action => 'index'
-        end
+        render 'edit'
+        #flash.now[:danger] = "You are not logged in Or are not the user you want to modify"
+        #redirect_to :action => 'index'
+        #end
     end
     def update ## action to save updated info about user
         @user = User.find(params[:id])
@@ -50,21 +47,23 @@ class UsersController < ApplicationController
         end
     end 
     def destroy
-        User.find(params[:id]).destroy
+        u = User.find(params[:id])
+        u.destroy
+        flash[:danger] = "User #{u.email} have been deleted"
         redirect_to :action => 'index'
     end
     private
         def correct_user?
             @user = User.find(params[:id])
             unless current_user?(@user)
-                flash[:error] = "You are not authorized to go on this page"
-                redirect_to :action => 'index' 
+                flash.now[:danger] = "You are not authorized to go on this page"
+                redirect_to root_path
             end
         end
         # Only admin can do the delete request (agaisnt malicious query)
         def admin_user?
             unless (current_user && current_user.admin?)
-                flash[:error] = "You are not an admin to delete user"
+                flash.now[:danger] = "You are not an admin to delete user"
                 redirect_to :action => 'index'
             end
         end

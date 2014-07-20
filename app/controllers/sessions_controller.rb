@@ -6,10 +6,11 @@ class SessionsController < ApplicationController
     def create
         user = User.find_by(email: params[:session][:email].downcase)
         if user && user.authenticate(params[:session][:password])
+           flash[:success] = "Sign in successful"
            sign_in user
            redirect_back user # redirect back or to user 
        else
-           flash[:error] = "Invalid credentials..."
+           flash.now[:danger] = "Invalid credentials..."
            render 'new'
        end
     end

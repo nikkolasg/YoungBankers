@@ -1,6 +1,7 @@
 require 'rails_helper'
+require 'spec_helper'
 
-RSpec.describe User, :type => :model do
+describe User do
     before { @user = User.new(fname:"elo",lname:"elo",email:"elo@elo.com",enrol:1,password:"12345",password_confirmation:"12345" )}
 
     subject { @user }
@@ -10,7 +11,15 @@ RSpec.describe User, :type => :model do
     it { should respond_to :password_digest }
     it {should respond_to :password }
     it { should respond_to :password_confirmation }
+    it { should respond_to :remember_token }
     it { should be_valid }
+    
+    describe "remember_token" do
+        before {@user.save }
+        its(:remember_token) {
+            should_not be_blank
+        }
+    end
 
     describe "when email is empty" do
         before { @user.email = " " }

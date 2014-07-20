@@ -33,11 +33,21 @@ gem 'bcrypt'
 gem 'will_paginate'
 gem 'bootstrap-will_paginate'
 
-gem 'rspec-rails'
-gem 'capybara' # for easy syntax test 
+group :development, :test do
+    gem 'rspec-rails'
+    gem 'rspec-its'
+    gem 'capybara' # for easy syntax test 
+    gem 'faker' # generating sample data
 
+    gem 'pry-rescue'  # debugging
+    gem 'pry-stack_explorer'
+    gem 'database_cleaner'
+end
 
+gem 'factory_girl_rails' , group: :test
+#gem 'selenium-webdriver'
 gem 'bootstrap-sass'
+gem 'font-awesome-rails'
 gem 'sprockets'
 # Use unicorn as the app server
 # gem 'unicorn'

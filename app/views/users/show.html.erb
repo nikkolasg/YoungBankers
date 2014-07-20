@@ -11,15 +11,162 @@ Enrolment type :
 </p>
 <p> <%= link_to "Edit Profile", edit_user_path(@user) %> </p>
 
-<% if @user.articles.any? %>
-    <h2> Articles ( <%= @user.articles.count %> ) : </h2>
-    <% if !@articles.empty? %>
-        <ol class="articles">
-            <%= render @articles  %>
-        </ol>
-        <%= will_paginate @articles %>
-    <% end %>
-<% else %>
-    No Articles ... 
-<% end %>
+<!--USER PROFILE--->
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 col-xs-10">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-4 text-center">
+                            <img src="http://fr.eonline.com/eol_images/Entire_Site/2013929/rs_560x415-131029092501-560.Giraffe-jmd-102913.jpg" alt="" class="center-block img-circle img-responsive">
+                            <a href="#">Change Photo</a></p>
+
+                        </div><!--/col--> 
+                        <div class="col-xs-12 col-sm-8">
+                            <h2>John Smith</h2>
+                            <p><strong>About: </strong> Executive </p>
+                            <p><strong>Hobbies: </strong> Skydiving </p>
+                            <p><strong>Skills: </strong> 
+                            <span class="label label-info tags">Management</span> 
+                            <span class="label label-info tags">Leadership</span>
+                            <span class="label label-info tags">Blabla</span>
+                            <span class="label label-info tags">Blabla</span>
+                            </p>
+                            <p><strong>Email:</strong>johnsmith@ybc.net</p>
+                        </div>
+
+                        <ul class="list-unstyled list-inline list-social-icons">
+                            <li class="tooltip-social facebook-link"><a href="#facebook-profile" data-toggle="tooltip" data-placement="top" title="Facebook"><i class="fa fa-facebook-square fa-2x"></i></a>
+                            </li>
+                            <li class="tooltip-social linkedin-link"><a href="#linkedin-profile" data-toggle="tooltip" data-placement="top" title="LinkedIn"><i class="fa fa-linkedin-square fa-2x"></i></a>
+                            </li>
+                            <li class="tooltip-social twitter-link"><a href="#twitter-profile" data-toggle="tooltip" data-placement="top" title="Twitter"><i class="fa fa-twitter-square fa-2x"></i></a>
+                            </li>
+                            <li class="tooltip-social google-plus-link"><a href="#google-plus-profile" data-toggle="tooltip" data-placement="top" title="Google+"><i class="fa fa-google-plus-square fa-2x"></i></a>
+                            </li>
+                        </ul>
+                        <!--/col-->          
+                        <!--<div class="clearfix"></div>-->
+<div class="col-xs-12 col-sm-4">
+<h2><strong> 20,7K </strong></h2>                    
+<p><small>Followers</small></p>
+<button class="btn btn-success btn-block"><span class="fa fa-plus-circle"></span> Follow </button>
+</div><!--/col-->
+                        <!--div class="col-xs-12 col-sm-4">
+<h2><strong>245</strong></h2>                    
+<p><small>Following</small></p>
+<button class="btn btn-info btn-block"><span class="fa fa-user"></span> View Profile </button>
+</div><!--/col-->
+                        <!--div class="col-xs-12 col-sm-4">
+<h2><strong>43</strong></h2>                    
+<p><small>Snippets</small></p>
+<button type="button" class="btn btn-primary btn-block"><span class="fa fa-gear"></span> Options </button>  
+</div><!--/col-->
+
+                        <div class="col-md-12">
+                            <a href="#" class="btn btn-default btn-sm pull-right">Edit Profile</a>
+                        </div>
+                    </div><!--/row-->
+                </div><!--/panel-body-->
+            </div><!--/panel-->
+        </div><!--/col--> 
+    </div><!--/row--> 
+</div><!--/container--> 
+
+
+
+<!--DESCRIPTION DE PROJETS-->    
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 col-xs-10">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-4 ">                                         
+                            <div class="container">
+                                <h3><i class="glyphicon glyphicon-list-alt"></i>  Projects</h3>
+                                <strong>Role</strong>
+                                <p>Job description</p>
+
+                                <strong>Role</strong>
+                                <p>Job description</p>
+
+                                <strong>Role</strong>
+                                <p>Job description</p>
+
+                                <strong>Role</strong>
+                                <p>Job description</p>
+                            </div>
+                        </div><!--/row-->
+                    </div><!--/panel-body-->
+                </div><!--/panel-->
+            </div><!--/col--> 
+        </div><!--/row--> 
+    </div><!--/container--> 
+
+
+
+    <!--VOLONTEERING AND NON PROFIT-->    
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-xs-10">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-4 ">                                         
+                                <div class="container">
+                                    <h3><i class="glyphicon glyphicon-globe"></i>  Volonteer and causes</h3>
+                                    <strong>Role</strong>
+                                    <p>Job description</p>
+
+                                    <strong>Role</strong>
+                                    <p>Job description</p>
+
+                                    <strong>Role</strong>
+                                    <p>Job description</p>
+
+                                    <strong>Role</strong>
+                                    <p>Job description</p>
+                                </div>
+                            </div><!--/row-->
+                        </div><!--/panel-body-->
+                    </div><!--/panel-->
+                </div><!--/col--> 
+            </div><!--/row--> 
+        </div><!--/container-->     
+    </div>
+
+    <!--DISTINGUISHMENTS-->    
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-xs-10">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-4 ">                                         
+                                <div class="container">
+                                    <h3><i class="glyphicon glyphicon-leaf"></i>  Distinguishments and Awards</h3>
+                                    <strong>Role</strong>
+                                    <p>Job description</p>
+
+                                    <strong>YBC Belt</strong>
+                                    <p>Black: Leader and high impact on reuniting funds </p>
+
+                                    <strong>Role</strong>
+                                    <p>Job description</p>
+
+                                    <strong>Role</strong>
+                                    <p>Job description</p>
+                                </div>
+                            </div><!--/row-->
+                        </div><!--/panel-body-->
+                    </div><!--/panel-->
+                </div><!--/col--> 
+            </div><!--/row--> 
+        </div><!--/container-->     
+    </div>    
+
+
 
