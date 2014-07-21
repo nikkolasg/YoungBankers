@@ -52,7 +52,7 @@ describe 'Users pages' do
             visit root_path
             valid_signin(user) 
         end
-        it { should have_content("User Profile") }
+        it { should have_content("#{user.fname} #{user.lname}") }
         it { should have_link("Edit Profile") }
 
     end

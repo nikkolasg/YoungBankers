@@ -10,7 +10,7 @@ class CreateUsers < ActiveRecord::Migration
       t.column :enrol, :integer # 1 = individual 2= organization
        
       t.column :role, :string # executive , chief , etc
-      t.column :profile_picture
+      
       t.column :link_fb, :string
       t.column :link_li, :string 
       t.column :link_twitter, :string

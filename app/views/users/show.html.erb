@@ -1,16 +1,3 @@
-<h2> User Profile </h2> 
-<p> 
-<%= gravatar_for(@user) %>
-<%= @user.fname.to_s + " " +  @user.lname.to_s %>
-<br>
-<%= @user.email %>
-<br>
-Enrolment type : 
-<%= " Individual" if @user.enrol == 1 %>
-<%= " Organizational" if @user.enrol == 2 %> 
-</p>
-<p> <%= link_to "Edit Profile", edit_user_path(@user) %> </p>
-
 <!--USER PROFILE-->
 
 <div class="container">
@@ -25,16 +12,18 @@ Enrolment type :
 
                         </div><!--/col--> 
                         <div class="col-xs-12 col-sm-8">
-                            <h2>John Smith</h2>
-                            <p><strong>About: </strong> Executive </p>
-                            <p><strong>Hobbies: </strong> Skydiving </p>
-                            <p><strong>Skills: </strong> 
+                            <h2> <%= @user.fname.to_s + " " + @user.lname.to_s %> </h2>
+                            <p><strong>Job: </strong> <%= @user.role unless @user.role.blank? %> </p>
+                            <% if @user.display_private %>
+                                <p><strong>Hobbies: </strong> <%= @user.hobbies unless @user.hobbies.blank? %>  </p>
+                                <p><strong>Skills: TODO </strong> 
+                            <% end %>
                             <span class="label label-info tags">Management</span> 
                             <span class="label label-info tags">Leadership</span>
                             <span class="label label-info tags">Blabla</span>
                             <span class="label label-info tags">Blabla</span>
                             </p>
-                            <p><strong>Email:</strong>johnsmith@ybc.net</p>
+                            <p><strong>Email:</strong> <%= @user.email %> </p>
                         </div>
 
                         <ul class="list-unstyled list-inline list-social-icons">
@@ -49,13 +38,13 @@ Enrolment type :
                         </ul>
                         <!--/col-->          
                         <!--<div class="clearfix"></div>-->
-<!--                         <div class="col-xs-12 col-sm-4"> -->
-<!--                             <h2><strong> 20,7K </strong></h2>                     -->
-<!--                             <p><small>Followers</small></p> -->
-<!--                             <button class="btn btn-success btn-block"><span class="fa fa-plus-circle"></span> Follow </button> -->
-<!--                         </div>                        -->
-                            <div class="col-md-12">
-                            <a href="#" class="btn btn-default btn-sm pull-right">Edit Profile</a>
+                        <!--                         <div class="col-xs-12 col-sm-4"> -->
+                        <!--                             <h2><strong> 20,7K </strong></h2>                     -->
+                        <!--                             <p><small>Followers</small></p> -->
+                        <!--                             <button class="btn btn-success btn-block"><span class="fa fa-plus-circle"></span> Follow </button> -->
+                        <!--                         </div>                        -->
+                        <div class="col-md-12">
+                            <%= link_to "Edit Profile", edit_user_path(@user), class: "btn btn-default btn-sm pull-right" %>
                         </div>
                     </div><!--/row-->
                 </div><!--/panel-body-->

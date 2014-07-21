@@ -12,6 +12,10 @@ describe User do
     it {should respond_to :password }
     it { should respond_to :password_confirmation }
     it { should respond_to :remember_token }
+    it { should respond_to :role }
+    it { should respond_to :link_li }
+    it { should respond_to :display_private }
+    it { should respond_to :hobbies }
     it { should be_valid }
     
     describe "remember_token" do

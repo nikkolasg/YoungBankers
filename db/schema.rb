@@ -11,18 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140704202338) do
-
-  create_table "articles", force: true do |t|
-    t.string   "title"
-    t.string   "content"
-    t.string   "image"
-    t.integer  "user_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "articles", ["created_at"], name: "index_articles_on_created_at", using: :btree
+ActiveRecord::Schema.define(version: 20140704165500) do
 
   create_table "users", force: true do |t|
     t.string   "password_digest"
@@ -31,6 +20,13 @@ ActiveRecord::Schema.define(version: 20140704202338) do
     t.string   "email",           limit: 100
     t.integer  "gender"
     t.integer  "enrol"
+    t.string   "role"
+    t.string   "link_fb"
+    t.string   "link_li"
+    t.string   "link_twitter"
+    t.string   "link_gplus"
+    t.boolean  "display_private",             default: true
+    t.string   "hobbies",         limit: 200
     t.string   "city",            limit: 50
     t.integer  "code"
     t.string   "country",         limit: 30
