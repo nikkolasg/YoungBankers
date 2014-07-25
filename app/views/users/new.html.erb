@@ -1,4 +1,8 @@
-<h1> Create new user </h1>
+<div class="row">
 <%= render 'user_error' %>
-<%= render 'form' %>
-
+</div>
+<div class="row">
+    <div class="span12" >
+        <%= render 'form', locals: { title: "User Registration" } %>
+</div>
+</div>

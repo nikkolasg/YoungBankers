@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
     VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+    VALID_PHONE_REGEX = /\A\+?[0-9]{3}-?[0-9]{6,12}\z/i
     validates :email, presence: true, format: { with: VALID_EMAIL_REGEX},
                     uniqueness: { case_sensitive: false }
     validates :lname ,:fname , presence: true, 
@@ -8,6 +9,13 @@ class User < ActiveRecord::Base
     
     validates :password, length: { minimum: 5 , maximum: 50 }
     
+    validates :gender, presence:true
+    validates :role, presence:true
+    validates :country, :city, presence: true
+   # validates :phone , format: { with: VALID_PHONE_REGEX }
+
+
+
     has_secure_password #handle double confirmation & presence   
 
     before_create :create_remember_token

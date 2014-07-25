@@ -58,7 +58,7 @@ describe 'Users pages' do
     end
     describe "signup page" do
         before { visit signup_path }
-        it { should have_content("new user") }
+        it { should have_content("Registration") }
 
 
         describe "Signup process" do
@@ -79,7 +79,14 @@ describe 'Users pages' do
                     fill_in "user_email" ,       with: "elodou@elodou.com"
                     fill_in "user_password",     with: "12345"
                     fill_in "user_password_confirmation", with: "12345"
-                    choose 'user_enrol_1'
+                    fill_in "user_role", with: "executive"
+                    fill_in "user_city", with: "DidineVille"
+                    all("#user_country option")[0].select_option
+                    fill_in "user_hobbies", with: "Skydiving"
+                    fill_in "user_phone", with: "0768686868"
+                    fill_in "user_link_li", with: "https://www.linkedin.com/profile/nikkolasg"
+                    check "user_display_private" 
+                    
                 end
                 it "should create user" do
                     expect { click_button submit }.to change(User, :count).by(1)
@@ -95,7 +102,7 @@ describe 'Users pages' do
             valid_signin(user)
             click_on "Edit Profile"
         end 
-        it { should have_content("Edit your profile") }
+        it { should have_content("Edit Profile") }
 
         describe "with invalid info" do
             before { click_on "Submit" }

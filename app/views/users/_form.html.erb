@@ -1,26 +1,115 @@
-<%= form_for @user do |u| %>
-    <%= u.label "First Name " %>
-    <%= u.text_field :fname %>
-    <br>
-    <%= u.label "Last Name " %>
-    <%= u.text_field :lname %>
-    <br>
-    <%= u.label "Email " %>
-    <%= u.text_field :email %>
-    <br>
-    <%= u.label "Password " %>
-    <%= u.password_field :password %>
-    <br>
-    <%= u.label "Password Confirmation " %>
-    <%= u.password_field :password_confirmation %>
-    <br>
-    <%= u.radio_button :enrol ,1 %>
-    <%= u.label "Individual" %>
-    <br>
-    <%= u.radio_button :enrol ,2 %>
-    <%= u.label "Organizational" %>
-    <br>
+<%= form_for @user, html: { class: "form-horizontal"  } do |u| %>
+    <fieldset>
+        <legend style="text-align:center;"> <%= locals[:title] %></legend>
+    <div class="form-group">
+        <%= u.label "Title*", clasS:"control-label col-md-2 col-md-offset-3" %>
+        <div class="col-md-4">
+        <%= u.select :gender, ['Mr.', 'Mrs', 'Miss' ], {} , class:"form-control input-md" %>
+    </div>
+</div>
+    <!-- FIRST NAME -->
+    <div class="form-group" >
+        <%= u.label "First Name* ", class:"control-label col-md-2 col-md-offset-3"  %>
+        <div class="col-md-4">
+            <%= u.text_field :fname  , class:"input-md form-control "%>
+        </div>
+    </div>
 
-    <%= u.submit "Submit" %>
+    <!-- LAST NAME -->
+    <div class="form-group">
+        <%= u.label "Last Name* ", class:"control-label col-md-2 col-md-offset-3"  %>
+        <div class="col-md-4">
+            <%= u.text_field :lname  , class:"form-control input-md" %>
+        </div>
+    </div>
+
+    <!-- EMAIL -->
+    <div class="form-group">
+        <%= u.label "Email* " , class:"control-label col-md-2 col-md-offset-3" %>
+        <div class="col-md-4">
+            <%= u.text_field :email , class:"form-control input-md" %>
+        </div>
+    </div>
+
+    <!-- PASSWORD -->
+    <div class="form-group">
+        <%= u.label "Password* ", class:"control-label col-md-2 col-md-offset-3"  %>
+        <div class="col-md-4">
+            <%= u.password_field :password, class:"form-control input-md"   %>
+        </div>
+    </div>
+
+    <!-- PASSWORD CONFIRMATION -->
+    <div class="form-group">
+        <%= u.label "Password Confirmation* ", class:"control-label col-md-2 col-md-offset-3" %>
+        <div class="col-md-4" >
+            <%= u.password_field :password_confirmation, class:"form-control input-md"  %>
+        </div>
+    </div>
+
+    <!-- ROLE -->
+    <div class="form-group">
+        <%= u.label "Profession*", class:"control-label col-md-2 col-md-offset-3" %>
+        <div class="col-md-4">
+            <%= u.text_field :role, class:"form-control input-md" %>
+        </div>
+    </div>
+    <!-- DIVIDER -->
+    <div class="col-md-6 col-md-offset-3 border-bottom" style="margin-bottom: 15px; border-bottom: 1px solid #ccc;" >
+    </div> 
+    <!-- /DIVIDER -->
+    <div class="form-group">
+        <strong> <%= u.label "Privacy", class:"control-label col-md-2 col-md-offset-3"%> </strong>
+        <div class="col-md-4"  style="margin-top:8px;">
+            <%= u.check_box( :display_private, { class:""} ,true,false) %>
+            <%= u.label " Display private informations on my profile page" %>
+        </div>
+    </div>
+    <!-- COUNTRY -->
+    <div class="form-group">
+        <%= u.label "Country*", class:"control-label col-md-2 col-md-offset-3" %>
+        <div class="col-md-4">
+            <%= u.country_select :country, ["Great Britain", "United States","France"], {}, class:"form-control input-md"%>
+        </div>
+    </div>
+
+    <!-- CITY -->
+    <div class="form-group">
+        <%= u.label "City*", class:"control-label col-md-2 col-md-offset-3" %>
+        <div class="col-md-4">
+            <%= u.text_field :city, class:"form-control input-md" %>
+        </div>
+    </div>
+    <!-- PHONE -->
+    <div class="form-group" >
+        <%= u.label "Phone number", class:"control-label col-md-2 col-md-offset-3" %>
+        <div class="col-md-4">
+            <%= u.text_field :phone, class:"form-control input-md" %>
+            <span class="help-block"> Please, provide country prefix </span>
+        </div>
+    </div>
+
+    <!-- HOBBIES -->
+    <div class="form-group">
+        <%= u.label "Hobbies", class:"control-label col-md-2 col-md-offset-3" %>
+        <div class="col-md-4" >
+            <%= u.text_area :hobbies, class:"form-control input-md"%>
+        </div>
+    </div>
+
+    <!-- LinkedIN -->
+    <div class="form-group">
+        <div class="col-md-2 col-md-offset-3 " style="text-align:right;">
+        <i class="fa fa-linkedin-square fa-2x"   > </i>     
+    </div>
+        <div class="col-md-4">
+            <%= u.text_field :link_li, class:"form-control input-md", placeholder: "LinkedIn  profile link" %>
+        </div>
+
+    </div>
+    <div class="form-group" style="padding-left:30px" >
+        <%= u.submit "Submit", { class:"col-md-offset-5 col-md-2 btn btn-primary", style:""}  %>
+      </div>
+</fieldset>
 <% end %>
 

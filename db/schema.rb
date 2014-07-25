@@ -19,7 +19,6 @@ ActiveRecord::Schema.define(version: 20140704165500) do
     t.string   "fname",           limit: 50
     t.string   "email",           limit: 100
     t.integer  "gender"
-    t.integer  "enrol"
     t.string   "role"
     t.string   "link_fb"
     t.string   "link_li"
@@ -28,11 +27,8 @@ ActiveRecord::Schema.define(version: 20140704165500) do
     t.boolean  "display_private",             default: true
     t.string   "hobbies",         limit: 200
     t.string   "city",            limit: 50
-    t.integer  "code"
     t.string   "country",         limit: 30
-    t.string   "region",          limit: 40
     t.string   "phone",           limit: 14
-    t.string   "fax",             limit: 14
     t.string   "last_login_ip"
     t.datetime "created_at"
     t.datetime "updated_at"

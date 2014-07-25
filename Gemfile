@@ -42,6 +42,7 @@ group :development, :test do
     gem 'pry-rescue'  # debugging
     gem 'pry-stack_explorer'
     gem 'database_cleaner'
+    gem 'rateaux'
 end
 
 gem 'factory_girl_rails' , group: :test
@@ -49,6 +50,7 @@ gem 'factory_girl_rails' , group: :test
 gem 'bootstrap-sass'
 gem 'font-awesome-rails'
 gem 'sprockets'
+gem 'country_select'
 # Use unicorn as the app server
 # gem 'unicorn'
 

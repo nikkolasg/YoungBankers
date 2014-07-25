@@ -12,37 +12,31 @@
 
                         </div><!--/col--> 
                         <div class="col-xs-12 col-sm-8">
-                            <h2> <%= @user.fname.to_s + " " + @user.lname.to_s %> </h2>
+                            <h4 style="margin-top:0px;"> <%= title_for(@user) + " " + @user.fname.to_s + " " + @user.lname.to_s %> </h4>
                             <p><strong>Job: </strong> <%= @user.role unless @user.role.blank? %> </p>
+
+                            <p><strong>Email:</strong> <%= @user.email %> </p>
                             <% if @user.display_private %>
-                                <p><strong>Hobbies: </strong> <%= @user.hobbies unless @user.hobbies.blank? %>  </p>
-                                <p><strong>Skills: TODO </strong> 
-                            <% end %>
+                                <p> <strong> Location: </strong> <%= "#{@user.city}, #{@user.country}" %> </p>
+                        <% end %>
                             <span class="label label-info tags">Management</span> 
                             <span class="label label-info tags">Leadership</span>
                             <span class="label label-info tags">Blabla</span>
                             <span class="label label-info tags">Blabla</span>
                             </p>
-                            <p><strong>Email:</strong> <%= @user.email %> </p>
-                        </div>
 
-                        <ul class="list-unstyled list-inline list-social-icons">
-                            <li class="tooltip-social facebook-link"><a href="#facebook-profile" data-toggle="tooltip" data-placement="top" title="Facebook"><i class="fa fa-facebook-square fa-2x"></i></a>
-                            </li>
-                            <li class="tooltip-social linkedin-link"><a href="#linkedin-profile" data-toggle="tooltip" data-placement="top" title="LinkedIn"><i class="fa fa-linkedin-square fa-2x"></i></a>
-                            </li>
-                            <li class="tooltip-social twitter-link"><a href="#twitter-profile" data-toggle="tooltip" data-placement="top" title="Twitter"><i class="fa fa-twitter-square fa-2x"></i></a>
-                            </li>
-                            <li class="tooltip-social google-plus-link"><a href="#google-plus-profile" data-toggle="tooltip" data-placement="top" title="Google+"><i class="fa fa-google-plus-square fa-2x"></i></a>
-                            </li>
-                        </ul>
-                        <!--/col-->          
-                        <!--<div class="clearfix"></div>-->
-                        <!--                         <div class="col-xs-12 col-sm-4"> -->
-                        <!--                             <h2><strong> 20,7K </strong></h2>                     -->
-                        <!--                             <p><small>Followers</small></p> -->
-                        <!--                             <button class="btn btn-success btn-block"><span class="fa fa-plus-circle"></span> Follow </button> -->
-                        <!--                         </div>                        -->
+
+                            <ul class="list-unstyled list-inline list-social-icons">
+                                <% if !@user.link_fb.blank? %>
+                                    <li class="tooltip-social facebook-link"><a href=<%= @user.link_fb %> data-toggle="tooltip" data-placement="top" title="Facebook"><i class="fa fa-facebook-square fa-2x"></i></a>
+                                </li>
+                            <% end %>
+                                <% if !@user.link_li.blank? %>
+                                    <li class="tooltip-social linkedin-link"><a href=<%= @user.link_li %> data-toggle="tooltip" data-placement="top" title="LinkedIn"><i class="fa fa-linkedin-square fa-2x"></i></a>
+                                </li>
+                            <% end %>
+                            </ul>
+                        </div>
                         <div class="col-md-12">
                             <%= link_to "Edit Profile", edit_user_path(@user), class: "btn btn-default btn-sm pull-right" %>
                         </div>

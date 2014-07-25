@@ -11,10 +11,12 @@ FactoryGirl.define do
         email
         password "12345"
         password_confirmation "12345"
-        enrol 1
-        
+        gender 1 
+        country "France"
+        city "Paris"
         role "executive"
-        link_fb "http://www.facebook.com/profile"
+        link_fb "http://www.facebook.com/profile/nikko"
+        link_li "http://www.facebook.com/profile/nikko"
         display_private "true"
         hobbies "golf & fun"
         factory :admin do

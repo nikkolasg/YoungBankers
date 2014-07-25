@@ -7,13 +7,17 @@ class UsersController < ApplicationController
     def index
         @users = User.paginate(page: params[:page], :per_page => 4)
     end
-    
+
     def show
-        @user = User.find(params[:id])
-        @article = Array.new
-        #@article = @user.articles.paginate(page: params[:page])
+        if params[:id]
+            @user = User.find(params[:id])
+        elsif params[:email]
+            @user = User.find_by(email: params[:email])
+        else
+            @user = current_user
+        end
     end
-    
+
     def new
         @user = User.new 
     end
@@ -53,23 +57,22 @@ class UsersController < ApplicationController
         redirect_to :action => 'index'
     end
     private
-        def correct_user?
-            @user = User.find(params[:id])
-            unless current_user?(@user)
-                flash.now[:danger] = "You are not authorized to go on this page"
-                redirect_to root_path
-            end
+    def correct_user?
+        @user = User.find(params[:id])
+        unless current_user?(@user)
+            flash[:danger] = "You are not authorized to go on this page"
+            redirect_to root_path
         end
-        # Only admin can do the delete request (agaisnt malicious query)
-        def admin_user?
-            unless (current_user && current_user.admin?)
-                flash.now[:danger] = "You are not an admin to delete user"
-                redirect_to :action => 'index'
-            end
+    end
+    # Only admin can do the delete request (agaisnt malicious query)
+    def admin_user?
+        unless (current_user && current_user.admin?)
+            flash[:danger] = "You are not an admin to delete user"
+            redirect_to :action => 'index'
         end
-        def user_params
-        ##TODO 
-            params.require(:user).permit(:lname,:email,:fname,:password,:password_confirmation,:enrol)
-        end
+    end
+    def user_params
+        params.require(:user).permit(:lname,:email,:fname,:password,:password_confirmation,:gender,:role,:display_private,:link_fi,:country,:city,:phone,:hobbies)
+    end
 
 end

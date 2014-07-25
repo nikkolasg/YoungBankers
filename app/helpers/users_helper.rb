@@ -5,6 +5,17 @@ module UsersHelper
         image_tag(grav_url, alt: "image", class: "profile_pic")
     end
 
-
+    def title_for(user)
+        case user.gender
+        when 1
+            "Mr."
+        when 2
+            "Mrs."
+        when 3
+            "Mlle"
+        else
+            ""
+        end
+    end
 
 end
