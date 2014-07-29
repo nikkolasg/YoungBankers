@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+
+
     VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
     VALID_PHONE_REGEX = /\A\+?[0-9]{3}-?[0-9]{6,12}\z/i
     validates :email, presence: true, format: { with: VALID_EMAIL_REGEX},
@@ -14,7 +16,8 @@ class User < ActiveRecord::Base
     validates :country, :city, presence: true
    # validates :phone , format: { with: VALID_PHONE_REGEX }
 
-
+    # PROFILE PIC
+    mount_uploader :avatar, AvatarUploader
 
     has_secure_password #handle double confirmation & presence   
 

@@ -44,7 +44,7 @@ group :development, :test do
     gem 'database_cleaner'
     gem 'rateaux'
 end
-
+gem 'carrierwave'
 gem 'factory_girl_rails' , group: :test
 #gem 'selenium-webdriver'
 gem 'bootstrap-sass'

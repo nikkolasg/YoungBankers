@@ -1,12 +1,12 @@
 <%= form_for @user, html: { class: "form-horizontal"  } do |u| %>
     <fieldset>
-        <legend style="text-align:center;"> <%= locals[:title] %></legend>
+    <legend style="text-align:center;"> <%= locals[:title] %></legend>
     <div class="form-group">
         <%= u.label "Title*", clasS:"control-label col-md-2 col-md-offset-3" %>
         <div class="col-md-4">
-        <%= u.select :gender, ['Mr.', 'Mrs', 'Miss' ], {} , class:"form-control input-md" %>
+            <%= u.select :gender, ['Mr.', 'Mrs', 'Miss' ], {} , class:"form-control input-md" %>
+        </div>
     </div>
-</div>
     <!-- FIRST NAME -->
     <div class="form-group" >
         <%= u.label "First Name* ", class:"control-label col-md-2 col-md-offset-3"  %>
@@ -54,17 +54,7 @@
             <%= u.text_field :role, class:"form-control input-md" %>
         </div>
     </div>
-    <!-- DIVIDER -->
-    <div class="col-md-6 col-md-offset-3 border-bottom" style="margin-bottom: 15px; border-bottom: 1px solid #ccc;" >
-    </div> 
-    <!-- /DIVIDER -->
-    <div class="form-group">
-        <strong> <%= u.label "Privacy", class:"control-label col-md-2 col-md-offset-3"%> </strong>
-        <div class="col-md-4"  style="margin-top:8px;">
-            <%= u.check_box( :display_private, { class:""} ,true,false) %>
-            <%= u.label " Display private informations on my profile page" %>
-        </div>
-    </div>
+
     <!-- COUNTRY -->
     <div class="form-group">
         <%= u.label "Country*", class:"control-label col-md-2 col-md-offset-3" %>
@@ -80,6 +70,18 @@
             <%= u.text_field :city, class:"form-control input-md" %>
         </div>
     </div>
+
+    <!-- DIVIDER -->
+    <div class="col-md-6 col-md-offset-3 border-bottom" style="margin-bottom: 15px; border-bottom: 1px solid #ccc;" >
+    </div> 
+    <!-- /DIVIDER -->
+    <div class="form-group">
+        <strong> <%= u.label "Privacy", class:"control-label col-md-2 col-md-offset-3"%> </strong>
+        <div class="col-md-4"  style="margin-top:8px;">
+            <%= u.check_box( :display_private, { class:""} ,true,false) %>
+            <%= u.label " Display private informations on my profile page" %>
+        </div>
+    </div>
     <!-- PHONE -->
     <div class="form-group" >
         <%= u.label "Phone number", class:"control-label col-md-2 col-md-offset-3" %>
@@ -87,7 +89,8 @@
             <%= u.text_field :phone, class:"form-control input-md" %>
             <span class="help-block"> Please, provide country prefix </span>
         </div>
-    </div>
+    </div>d
+
 
     <!-- HOBBIES -->
     <div class="form-group">
@@ -100,8 +103,8 @@
     <!-- LinkedIN -->
     <div class="form-group">
         <div class="col-md-2 col-md-offset-3 " style="text-align:right;">
-        <i class="fa fa-linkedin-square fa-2x"   > </i>     
-    </div>
+            <i class="fa fa-linkedin-square fa-2x"   > </i>     
+        </div>
         <div class="col-md-4">
             <%= u.text_field :link_li, class:"form-control input-md", placeholder: "LinkedIn  profile link" %>
         </div>
@@ -109,7 +112,143 @@
     </div>
     <div class="form-group" style="padding-left:30px" >
         <%= u.submit "Submit", { class:"col-md-offset-5 col-md-2 btn btn-primary", style:""}  %>
-      </div>
+    </div>
 </fieldset>
 <% end %>
+
+<!--Start of registration form-->
+<div class="section-colored">
+    <div class="container">     
+        <div class="row">  
+            <div class="col-lg-12">
+
+                <div class="col-md-offset-1 col-md-10">
+                    <h3 class="text_center">Become a member</h3>
+
+                    <%= form_for @user, html: { class: "form"  } do |u| %>
+
+                        <div class="row">
+                        <div class="col-md-3 text_center">
+                            <div class="row">
+                            <!-- PROFILE PIC -->
+                            <img id="user_picture" width="128" height="128" src="/images/default_user_picture.png" class="img-thumbmail img-responsive" style="margin: 0 auto;" />
+                            <a  href="javascript:document.getElementById('user_avatar').click();"  id="btn_file" > Change picture </a>
+                            <%= u.file_field :avatar , style: "display:none;"%> 
+                        </div>
+                        </div>
+                        <div class="col-md-9">
+                            <div class="row">
+                                <div class="form-group col-md-2">
+                                    <%= u.label "Title" %>
+                                    <%= u.select :gender, ['Mr.', 'Mrs', 'Miss' ], {} , class:"form-control" %>
+                                </div>
+
+                                <div class="form-group col-md-5">
+                                    <%= u.label "First Name", class:"" %>
+                                    <%= u.text_field :fname, class:"form-control" %>
+                                </div>
+
+
+                                <div class="form-group col-md-5">
+                                    <%= u.label "Last name", class:" " %>
+                                    <%= u.text_field :lname, class:"form-control " %>
+                                </div>
+                            </div>
+
+                            <!-- EMAIL -->
+                            <div class="row">
+                                <div class="form-group col-md-6">
+                                    <%= u.label "Email", class:" " %>
+                                    <%= u.text_field :lname, class:"form-control " %>
+                                </div>
+                            </div>
+
+                            <!-- PASSWORD -->
+                            <div class="row">
+                                <div class="form-group col-md-6">
+                                    <%= u.label "Password", class:"" %>
+                                    <%= u.password_field :password , class:"form-control" %>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <%= u.label "Password Confirmation", class:"" %>
+                                    <%= u.password_field :password_confirmation, class:"form-control" %>
+                                </div>
+                            </div>
+
+
+                            <%= divider("col-md-12").html_safe %> 
+
+                            <!-- LOCATIOn -->
+                            <div class="row">
+                                <div class="form-group col-md-6">
+                                    <%= u.label "Address", class:"" %>
+                                    <%= u.text_field :address, { class:"form-control" } %>
+                                </div>
+                                <div class="form-group col-md-2">
+                                    <%= u.label "Code" %>
+                                    <%= u.text_field :code_post, class:"form-control" %>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group col-md-6">
+                                    <%= u.label "City" %>
+                                    <%= u.text_field :city, class:"form-control" %>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <%= u.label "Country" %>
+                                    <%= u.country_select :country, ["Great Britain", "United States","France"], {}, class:"form-control input-md"%>
+                                </div>
+                            </div>
+                            <%= divider("col-md-12").html_safe %>
+                            <!-- OCCUPATION -->
+                            <div class="row">
+                                <div class="form-group col-md-6">
+                                    <%= u.label "Job title" %>
+                                    <%= u.text_field :role, class:"form-control" %>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <%= u.label "Organization" %>
+                                    <!-- PUT ORGA -->
+                                    <input id="orga" class="form-control" type="text"> </input>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group col-md-6">
+                                    <%= u.label "Skills" %>
+                                    <textarea  class="form-control" rows="1"> </textarea>
+                                </div> 
+                            </div>
+
+                            <%= divider("col-md-12").html_safe %>
+
+                            <!-- OTHERS -->
+                            <div class="row">
+                                <div class="form-group col-md-6">
+                                    <%= u.label "Hobbies" %>
+                                    <%= u.text_area :hobbies, class:"form-control" %>
+                                </div>
+                                <div class="form-group col-md-5">
+                                    <%= u.label "LinkedIn Profile" %>
+                                    <%= u.text_field :link_li, class:"form-control" %>
+                                </div>
+                            </div>
+
+                            <%= divider("col-md-12").html_safe %>
+                            <div class="row">
+                                <div class="checkbox col-md-6 col-md-offset-3">
+                                    <%= u.check_box( :display_private, { class:""} ,true,false) %>
+                                    <%= u.label "Display private informations on my profile page" %>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group" style="" >
+                                    <%= u.submit "Submit", { class:"col-md-offset-5 col-md-2 btn btn-primary btn-lg", style:"margin-bottom:20px;"}  %>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            <% end %>               
+            </div>
 

@@ -2,4 +2,6 @@
 -make table skills, and table user_skills
 -user validations not all is necessar ??
 
-- PREVENT link redirection with regex for link_*
+- PREVENT link redirection xss atack  with regex for link_*
+
+- custom error message for users registration

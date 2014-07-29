@@ -13,3 +13,16 @@
     @extend .error;
     @extend .control-group;
 }
+
+// sign up section colored
+.section-colored {
+    background-color: #e1e1e1;
+}
+
+/*
+ * So it has the blue halo for bootstrap
+ * */
+.input_form {
+    @extend .form-control;
+    @extend .input-md;
+}
