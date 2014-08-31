@@ -17,4 +17,17 @@ module ApplicationHelper
               </div> 
           <!-- /DIVIDER -->'
     end
+
+    def breadcrumb(hash) 
+        html = "<ol class=\"breadcrumb\">"
+        hash.each do |h|
+            if h.equal? hash.last
+                html << "<li class=\"active\"> #{h[:name]} </li>"
+            else
+                html << "<li>" + link_to(h[:name], h[:path]) + "</li>"
+            end
+        end
+        html << "</ol>"
+        html.html_safe
+    end
 end

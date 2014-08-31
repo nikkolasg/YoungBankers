@@ -1,7 +1,15 @@
 -make table organization, change/add organization_id into users
+   --> one organization / user 
+   --> table for now only name:string 
+   --> make relations with users... 
 -make table skills, and table user_skills
 -user validations not all is necessar ??
 
 - PREVENT link redirection xss atack  with regex for link_*
+                  --> instead of regex, just check domain  ?
 
 - custom error message for users registration
+
+
+
+INSTALL : imagemagick, elasticsearch

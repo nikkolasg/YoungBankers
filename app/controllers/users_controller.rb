@@ -5,17 +5,15 @@ class UsersController < ApplicationController
     before_action :admin_user? ,     only: :destroy 
 
     def index
-        @users = User.paginate(page: params[:page], :per_page => 4)
+        if params[:query].present?
+            @users = User.search(params[:query], page: params[:page])
+        elsif
+            @users = User.paginate(page: params[:page], :per_page => 10)
+        end
     end
 
     def show
-        if params[:id]
-            @user = User.find(params[:id])
-        elsif params[:email]
-            @user = User.find_by(email: params[:email])
-        else
-            @user = current_user
-        end
+       @user = User.find(params[:id])
     end
 
     def new
@@ -73,7 +71,8 @@ class UsersController < ApplicationController
     end
     def user_params
         params.require(:user).permit(:lname,:email,:fname,:password,:password_confirmation,
-                                     :gender,:role,:display_private,:link_li,:country,:city,:phone,:hobbies)
+                                     :gender,:role,:display_private,:link_li,:country,:city,:phone,:hobbies,
+                                    :avatar)
     end
 
 end

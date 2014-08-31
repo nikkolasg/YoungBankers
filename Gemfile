@@ -31,8 +31,9 @@ gem 'spring',        group: :development
 gem 'bcrypt'
 ## automatic pagination
 gem 'will_paginate'
+gem 'will_paginate-bootstrap'
 gem 'bootstrap-will_paginate'
-
+gem 'searchkick'
 group :development, :test do
     gem 'rspec-rails'
     gem 'rspec-its'
@@ -44,7 +45,9 @@ group :development, :test do
     gem 'database_cleaner'
     gem 'rateaux'
 end
+
 gem 'carrierwave'
+gem 'mini_magick' # for resizing
 gem 'factory_girl_rails' , group: :test
 #gem 'selenium-webdriver'
 gem 'bootstrap-sass'

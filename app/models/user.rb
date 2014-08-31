@@ -16,13 +16,17 @@ class User < ActiveRecord::Base
     validates :country, :city, presence: true
    # validates :phone , format: { with: VALID_PHONE_REGEX }
 
-    # PROFILE PIC
-    mount_uploader :avatar, AvatarUploader
-
     has_secure_password #handle double confirmation & presence   
 
     before_create :create_remember_token
-    
+  
+    # PROFILE PIC
+    mount_uploader :avatar, AvatarUploader
+
+    # SEARCH
+    searchkick
+
+
     
     ## static methods  
     def User.new_remember_token

@@ -2,7 +2,9 @@ Rails.application.routes.draw do
   root 'static_pages#home'
   get 'home' => 'static_pages#home'  # with dieses
   get 'about' => 'static_pages#about' 
-
+  get 'contact' => 'static_pages#contact'
+  get 'charter' => 'static_pages#charter'
+  get 'services' => 'static_pages#services'
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
   resources :users

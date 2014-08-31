@@ -1,10 +1,14 @@
-<h1> User List </h1>
+<div class="container" >
+<div class="row">
+    <div class="col-lg-12">
+<h1 class="page-header"> User List</h1>
+    </div>
+</div>
 <% if @users.blank? %>
 <p>There are not any users currently in the system.</p>
 <% else %>
     
-    <%= will_paginate %>
-    <p>These are the current users in our system</p>
+    <%= will_paginate @users,  renderer: BootstrapPagination::Rails %>
     <ul class="users">
         <% @users.each do |user| %>
             <%= render user %>
@@ -13,4 +17,5 @@
     <%= will_paginate %>
 <% end %>
 <p> <%= link_to "Sign in", signin_path %> 
-<p> <%= link_to "Sign out", signout_path, method: "delete" %> </p>
+o<p> <%= link_to "Sign out", signout_path, method: "delete" %> </p>
+</div>

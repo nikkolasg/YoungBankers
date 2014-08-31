@@ -1,9 +1,21 @@
- <li>
-  <%= gravatar_for user %>
-  <%= "#{user.fname} #{user.lname} #{user.email}" %>
-  <% if current_user.admin? && !current_user?(user) %>
-      <%= link_to "delete", user, method: :delete,
-                                  data: { confirm: "You sure?" } %>
-  <% end %>
-  <%= link_to "Profile", user %>
+<li>
+<div class="row"> 
+    <div class="well col-md-6 ">
+        <div class="col-md-3">
+
+            <img src="<%= user.avatar.thumb.url %>" class="center-block img img-responsive" >
+        </div>
+        <div class="col-md-9">
+            <p><strong><%= "#{user.fname} #{user.lname}" %></strong></p>
+            <p> <a href=""><%= user.email %> </a></p>
+            <p> <%= user.role %> </p>
+
+            <% if current_user.admin? && !current_user?(user) %>
+                <%= link_to "delete", user, method: :delete,
+                    data: { confirm: "You sure?" } %>
+            <% end %>
+            <%= link_to "Profile", user %>
+        </div>
+    </div>
+</div>
 </li> 
