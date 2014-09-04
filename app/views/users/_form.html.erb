@@ -90,9 +90,11 @@
                                     <%= u.text_field :role, class:"form-control" %>
                                 </div>
                                 <div class="form-group col-md-6">
-                                    <%= u.label "Organization" %>
+                                    <%= u.fields_for :organization do |o| %>
+                                    <%= o.label "Organization" %>
                                     <!-- PUT ORGA -->
-                                    <input id="orga" class="form-control" type="text"> </input>
+                                    <%= o.text_field :name, class:"form-control" %>
+                                <% end %>
                                 </div>
                             </div>
                             <div class="row">

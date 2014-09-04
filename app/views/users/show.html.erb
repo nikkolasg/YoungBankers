@@ -14,6 +14,7 @@
                         <div class="col-xs-12 col-sm-8">
                             <h4 style="margin-top:0px;"> <%= title_for(@user) + " " + @user.fname.to_s + " " + @user.lname.to_s %> </h4>
                             <p><strong>Job: </strong> <%= @user.role unless @user.role.blank? %> </p>
+                            <p><strong> Company: </strong> <%= @user.organization.name %> </p>
 
                             <p><strong>Email:</strong> <%= @user.email %> </p>
                             <% if @user.display_private %>

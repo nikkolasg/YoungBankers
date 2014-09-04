@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
-
+    belongs_to :organization
+    accepts_nested_attributes_for :organization
 
     VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
     VALID_PHONE_REGEX = /\A\+?[0-9]{3}-?[0-9]{6,12}\z/i
@@ -14,6 +15,7 @@ class User < ActiveRecord::Base
     validates :gender, presence:true
     validates :role, presence:true
     validates :country, :city, presence: true
+    validates :organization, presence:true
    # validates :phone , format: { with: VALID_PHONE_REGEX }
 
     has_secure_password #handle double confirmation & presence   
