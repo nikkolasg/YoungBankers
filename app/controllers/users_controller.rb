@@ -21,9 +21,7 @@ class UsersController < ApplicationController
     end
 
     def create
-
         @user = User.new(user_params) # :user object built from user inputform 
-
         if @user.save
             # signin the user (token etc)
             sign_in @user
@@ -77,7 +75,9 @@ class UsersController < ApplicationController
     def user_params
         params.require(:user).permit(:lname,:email,:fname,:password,:password_confirmation,
                                      :gender,:role,:display_private,:link_li,:country,:city,:phone,:hobbies,
-                                    :avatar, :organization_attributes => [ :id, :name])
+                                    :avatar,:org_name, :organization_attributes => [ :id, :name])
     end
+
+         
 
 end

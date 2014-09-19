@@ -18,4 +18,9 @@ $('#user_avatar').change(function() {
     readUrl(this);
 });
 
+$("#query").typeahead( {
+    name:
+}
+
+
 });
