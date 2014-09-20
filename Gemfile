@@ -54,6 +54,8 @@ gem 'bootstrap-sass'
 gem 'font-awesome-rails'
 gem 'sprockets'
 gem 'country_select'
+gem 'bootstrap-typeahead-rails'
+gem 'typeahead-rails'
 # Use unicorn as the app server
 # gem 'unicorn'
 

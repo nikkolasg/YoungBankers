@@ -9,13 +9,14 @@ Rails.application.routes.draw do
   # root 'welcome#index'
   resources :users
   resources :sessions, only: [ :new, :create, :destroy ]
-  resources :articles, only: [ :create, :destroy ]
-
+  get 'organizations/auto_complete' => 'organizations#auto_complete'
+  get 'organizations/list' => 'organizations#list'
   get 'signup' => 'users#new'
   get 'signin' => 'sessions#new'
   delete 'signout' => 'sessions#destroy'
 
   get 'profile' => 'users#show' 
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

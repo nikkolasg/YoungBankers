@@ -18,9 +18,28 @@ $('#user_avatar').change(function() {
     readUrl(this);
 });
 
-$("#query").typeahead( {
-    name:
-}
+var orga = new Bloodhound ( {
+    datumTokenizer: Bloodhound.tokenizers.obj.whitespace('name'),
+    queryTokenizer: Bloodhound.tokenizers.whitespace,
+    limit: 10,
+    prefetch: {
+        url: '/organizations/list',
+        filter: function(list) {
+             return $.map(list, function(organization) { return { name: organization }; });
+        }
+    }
+});
+
+orga.initialize()
+
+$("#user_org_name").typeahead(null, {
+
+    name: "orga",
+    displayKey: 'name',
+    source : orga.ttAdapter()
+    //remote: "/organizations/auto_complete?query=%QUERY"
+
+});
 
 
 });

@@ -33,6 +33,8 @@ GEM
       debug_inspector (>= 0.0.1)
     bootstrap-sass (3.2.0.1)
       sass (~> 3.2)
+    bootstrap-typeahead-rails (0.9.3.3)
+      railties (>= 3.0)
     bootstrap-will_paginate (0.0.10)
       will_paginate
     builder (3.2.2)
@@ -199,6 +201,7 @@ GEM
       polyglot (>= 0.3.1)
     turbolinks (2.2.2)
       coffee-rails
+    typeahead-rails (0.10.5)
     tzinfo (1.2.1)
       thread_safe (~> 0.1)
     uglifier (2.5.3)
@@ -216,6 +219,7 @@ PLATFORMS
 DEPENDENCIES
   bcrypt
   bootstrap-sass
+  bootstrap-typeahead-rails
   bootstrap-will_paginate
   capybara
   carrierwave
@@ -242,6 +246,7 @@ DEPENDENCIES
   sprockets
   sqlite3
   turbolinks
+  typeahead-rails
   uglifier (>= 1.3.0)
   will_paginate
   will_paginate-bootstrap
