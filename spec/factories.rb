@@ -22,5 +22,10 @@ FactoryGirl.define do
         factory :admin do
             admin true
         end
+        organization
+    end
+
+    factory :organization do
+        name "World Bank"
     end
 end

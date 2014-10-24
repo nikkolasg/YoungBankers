@@ -13,4 +13,6 @@ class StaticPagesController < ApplicationController
 
   def services
   end
+  def mailbox
+  end
 end

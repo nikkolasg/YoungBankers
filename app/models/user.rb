@@ -2,6 +2,8 @@ class User < ActiveRecord::Base
     belongs_to :organization
     accepts_nested_attributes_for :organization
 
+    acts_as_messageable
+
     VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
     VALID_PHONE_REGEX = /\A\+?[0-9]{3}-?[0-9]{6,12}\z/i
     validates :email, presence: true, format: { with: VALID_EMAIL_REGEX},
@@ -37,6 +39,17 @@ class User < ActiveRecord::Base
     def User.digest(token)
         Digest::SHA1.hexdigest(token)
     end
+
+    def name
+        return self.lname.upcase + " " + self.fname.capitalize
+    end
+    def mailboxer_email(obj)
+        return nil
+        return self.email
+    end
+    # custom attribute.
+    # little hack so we can create a new org by name 
+    # or set an already existing one.
     def org_name
         (org = self.organization) && org.name
     end        

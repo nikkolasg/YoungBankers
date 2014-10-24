@@ -12,14 +12,12 @@
 <%= render 'layouts/header' %>
 
 <!-- RUBY CODE INSIDE !! -->
-<div class="container">
     <% flash.each do |k,v| %>
         <div class="alert alert-<%= k %>"><%= v %> </div>
     <% end %>
 
     <%= yield %>
 
-</div>
 <!-- END OF RUBY CODE -->
 
 <%= render 'layouts/footer' %>

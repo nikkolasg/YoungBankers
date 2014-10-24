@@ -57,7 +57,7 @@ describe User do
             duplicate_user.save
         end
 
-        it { should_not be_valid }
+        expect(duplicate_user).not_to be_valid 
     end
 
     describe "when fname is empty" do

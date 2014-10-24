@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.1'
-gem 'mysql'
+gem 'mysql2'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use SCSS for stylesheets
@@ -31,8 +31,6 @@ gem 'spring',        group: :development
 gem 'bcrypt'
 ## automatic pagination
 gem 'will_paginate'
-gem 'will_paginate-bootstrap'
-gem 'bootstrap-will_paginate'
 gem 'searchkick'
 group :development, :test do
     gem 'rspec-rails'
@@ -50,12 +48,26 @@ gem 'carrierwave'
 gem 'mini_magick' # for resizing
 gem 'factory_girl_rails' , group: :test
 #gem 'selenium-webdriver'
-gem 'bootstrap-sass'
+
+
 gem 'font-awesome-rails'
 gem 'sprockets'
 gem 'country_select'
-gem 'bootstrap-typeahead-rails'
+
 gem 'typeahead-rails'
+
+gem 'mailboxer'
+
+# BOOTSTRAP SECTION
+gem 'bootstrap-typeahead-rails'
+gem 'bootstrap-will_paginate'
+gem 'will_paginate-bootstrap'
+## SASS install
+#gem 'bootstrap-sass'
+## LESS install
+gem 'therubyracer'
+gem 'less-rails-bootstrap'
+
 # Use unicorn as the app server
 # gem 'unicorn'
 

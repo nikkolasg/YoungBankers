@@ -19,7 +19,7 @@
                             <p><strong>Email:</strong> <%= @user.email %> </p>
                             <% if @user.display_private %>
                                 <p> <strong> Location: </strong> <%= "#{@user.city}, #{@user.country}" %> </p>
-                        <% end %>
+                            <% end %>
                             <span class="label label-info tags">Management</span> 
                             <span class="label label-info tags">Leadership</span>
                             <span class="label label-info tags">Blabla</span>
@@ -30,12 +30,12 @@
                             <ul class="list-unstyled list-inline list-social-icons">
                                 <% if !@user.link_fb.blank? %>
                                     <li class="tooltip-social facebook-link"><a href=<%= @user.link_fb %> data-toggle="tooltip" data-placement="top" title="Facebook"><i class="fa fa-facebook-square fa-2x"></i></a>
-                                </li>
-                            <% end %>
+                                    </li>
+                                <% end %>
                                 <% if !@user.link_li.blank? %>
                                     <li class="tooltip-social linkedin-link"><a href=<%= @user.link_li %> data-toggle="tooltip" data-placement="top" title="LinkedIn"><i class="fa fa-linkedin-square fa-2x"></i></a>
-                                </li>
-                            <% end %>
+                                    </li>
+                                <% end %>
                             </ul>
                         </div>
                         <div class="col-md-12">

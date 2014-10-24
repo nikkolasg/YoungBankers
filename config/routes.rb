@@ -1,10 +1,13 @@
 Rails.application.routes.draw do
+  get 'mailbox/index'
+
   root 'static_pages#home'
   get 'home' => 'static_pages#home'  # with dieses
   get 'about' => 'static_pages#about' 
   get 'contact' => 'static_pages#contact'
   get 'charter' => 'static_pages#charter'
   get 'services' => 'static_pages#services'
+  get 'mailbox' => 'static_pages#mailbox'
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
   resources :users
