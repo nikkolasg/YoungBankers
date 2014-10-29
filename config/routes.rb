@@ -7,11 +7,12 @@ Rails.application.routes.draw do
   get 'contact' => 'static_pages#contact'
   get 'charter' => 'static_pages#charter'
   get 'services' => 'static_pages#services'
-  get 'mailbox' => 'static_pages#mailbox'
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
   resources :users
   resources :sessions, only: [ :new, :create, :destroy ]
+  resources :mailbox
+  get 'mailbox' => 'mailbox#index'
   get 'organizations/auto_complete' => 'organizations#auto_complete'
   get 'organizations/list' => 'organizations#list'
   get 'signup' => 'users#new'
