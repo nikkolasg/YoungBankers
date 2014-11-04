@@ -1,12 +1,29 @@
 <%= render 'header' %>
 
     <div class="box">
-
+        <!-- TITLE conversation -->
         <div class="box-header">
-
             <i class="fa fa-comments"></i>
             <h3 class="box-title"> <%= @conversation.subject %> </h3>
+        </div>
+        <!-- previous messages -->
+        <div class="slimScrollDiv" style="position:relative; overflow:hidden; width:auto height:auto">
 
+            <div class="chat-box chat" style="overflow:hidden;width:auto;height:auto;">
+            <%= @conversation.receipts_for(current_user).each do |receipt| %>
+                <div class="chat-item" >
+                    <p class="message">
+                    <% sender = receipt.message.sender %>
+                    <%= link_to user_name(sender), sender %> 
+                    <small class="text-muted pull-right" >
+                        <i class="fa fa-clock-o"> </i>
+                        time_string(receipt.updated_at)
+                    </small>
+
+                    </p>    
+                </div>
+            <% end %>
+            </div>
         </div>
 
     </div>

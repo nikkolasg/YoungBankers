@@ -8,7 +8,7 @@
                     <td class="small-col"><input type="checkbox" /></td>
                     <td class="name"><a href="#"><%= user_name(c.last_sender) %> </a></td>
                     <td class="subject"><a href="#"> <%= c.subject %> </a></td>
-                    <td class="time"> <%= c.created_at.strftime("%M:%H %d/%m/%y") %> </td>
+                    <td class="time"> <%= time_string(c.created_at)%> </td>
                 </tr>
             <% end %>
         <% end %>

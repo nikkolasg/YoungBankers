@@ -11,6 +11,9 @@ module ApplicationHelper
     def comment
     end
 
+    def time_string time
+       time.strftime("%M:%H %d/%m/%y")  
+    end
     def divider(size_col)
         ' <!-- DIVIDER -->
               <div class="' + size_col.to_s + ' border-bottom" style="margin-bottom: 15px; border-bottom: 1px solid #ccc;" >
