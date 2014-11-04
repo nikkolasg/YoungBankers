@@ -1,0 +1,36 @@
+<%= render 'header' %>
+<div class="table-responsive">
+    <!-- THE MESSAGES -->
+    <table class="table table-mailbox">
+        <% @conversations.each do |c| %>
+            <%= link_to conversation_path(c) do %>  
+                <tr <%= "class=unread" if c.is_unread?(@user) %> >
+                    <td class="small-col"><input type="checkbox" /></td>
+                    <td class="name"><a href="#"><%= user_name(c.last_sender) %> </a></td>
+                    <td class="subject"><a href="#"> <%= c.subject %> </a></td>
+                    <td class="time"> <%= c.created_at.strftime("%M:%H %d/%m/%y") %> </td>
+                </tr>
+            <% end %>
+        <% end %>
+    </table>
+</div><!-- /.table-responsive -->
+</div><!-- /.col (RIGHT) -->
+</div><!-- /.row -->
+</div><!-- /.box-body -->
+<div class="box-footer clearfix">
+    <div class="pull-right">
+        <small>Showing 1-12/1,240</small>
+        <button class="btn btn-xs btn-primary"><i class="fa fa-caret-left"></i></button>
+        <button class="btn btn-xs btn-primary"><i class="fa fa-caret-right"></i></button>
+    </div>
+</div><!-- box-footer -->
+</div><!-- /.box -->
+</div><!-- /.col (MAIN) -->
+</div>
+<!-- MAILBOX END -->
+
+</section><!-- /.content -->
+</aside><!-- /.right-side -->
+</div><!-- ./wrapper -->
+
+<%= render 'footer' %>

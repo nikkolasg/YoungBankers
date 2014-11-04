@@ -11,8 +11,8 @@ Rails.application.routes.draw do
   # root 'welcome#index'
   resources :users
   resources :sessions, only: [ :new, :create, :destroy ]
-  resources :mailbox
-  get 'mailbox' => 'mailbox#index'
+  resources :conversations
+  get 'mailbox' => 'conversations#index'
   get 'organizations/auto_complete' => 'organizations#auto_complete'
   get 'organizations/list' => 'organizations#list'
   get 'signup' => 'users#new'

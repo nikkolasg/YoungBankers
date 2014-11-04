@@ -8,16 +8,19 @@ module UsersHelper
     def title_for(user)
         case user.gender
         when 1
-            "Mr."
+            "Mr. "
         when 2
-            "Mrs."
+            "Mrs. "
         when 3
-            "Mlle"
+            "Mlle "
         else
             ""
         end
     end
-
+    
+    def user_name(user)
+        user.fname.capitalize + " " + user.lname.capitalize
+    end
    
 
 end

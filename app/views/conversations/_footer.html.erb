@@ -1,0 +1,36 @@
+<!-- COMPOSE MESSAGE MODAL -->
+<div class="modal fade" id="compose-modal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title"><i class="fa fa-envelope-o"></i> Compose New Message</h4>
+            </div>
+            <%= form_for( :mailbox, url: {action:"create"}, method:"post") do |f| %>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <%= content_tag(:span, "TO:", class: "input-group-addon") %>
+                            <%= text_field_tag(:participants,"", { placeholder: "Email address here", class:"form-control", type: "email" }) %>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <%= content_tag(:span, "Subject:", class: "input-group-addon") %>
+                            <%= text_field_tag(:subject, "", { placeholder: "Subject", class: "form-control" }) %>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <%= text_area_tag(:body, "", { placeholder: "Message", class:"form-control", style:"height:120px;" }) %>
+                    </div>
+                </div>
+                <div class="modal-footer clearfix">
+
+                    <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fa fa-times"></i> Discard</button>
+                    <%= f.submit "<i class=fa fa-envelope></i> Send Message", { class:"btn btn-primary pull-left" } %>
+                </div>
+            <% end %>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+</div>
