@@ -42,13 +42,12 @@ group :development, :test do
     gem 'pry-stack_explorer'
     gem 'database_cleaner'
     gem 'rateaux'
+    gem 'factory_girl_rails' 
 end
 
 gem 'carrierwave'
 gem 'mini_magick' # for resizing
-gem 'factory_girl_rails' , group: :test
 #gem 'selenium-webdriver'
-
 
 gem 'font-awesome-rails'
 gem 'sprockets'
@@ -68,6 +67,8 @@ gem 'will_paginate-bootstrap'
 gem 'therubyracer'
 gem 'less-rails-bootstrap'
 
+## SLIM SCROLL
+gem 'jquery-slimscroll-rails'
 # Use unicorn as the app server
 # gem 'unicorn'
 

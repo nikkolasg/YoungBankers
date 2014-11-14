@@ -3,13 +3,15 @@ class ConversationsController < ApplicationController
     helper_method :mailbox, :conversation
 
     def index
-        # inbox by default for now
-        @conversations = mailbox.inbox
+        @conversations = box
         @user = current_user
     end
     
     def show
-       @conversation = mailbox.inbox.find(params[:id]) 
+       @conversation = box.find(params[:id]) 
+    rescue 
+        flash[:error] = "No mail found ..."
+        redirect_to action: "index", box: params[:box]
     end
     
     def create 
@@ -29,7 +31,12 @@ class ConversationsController < ApplicationController
     end
 
     def reply
-        current_user.reply_to_conversation(conversation, params(:body,:subject))
+        msg = params[:message]
+        unless msg
+            flash[:alert] = "No message to send ..."
+            redirect_to conversation_path(conversation)
+        end
+        current_user.reply_to_conversation(conversation, msg[:body])
         redirect_to conversation_path(conversation)
     end
 
@@ -42,9 +49,20 @@ class ConversationsController < ApplicationController
         redirect_to :conversations
     end
     private
+    def box
+        @type = :inbox ##default
+        box = params[:box]
+        return mailbox.inbox unless box
+        return mailbox.inbox unless [:inbox,:sentbox,:trash].include? box.to_sym
+        @type = box.to_sym
+        mailbox.send(box)
+    end
     def mailbox
         @mailbox ||= current_user.mailbox
     end 
+    def conversation 
+        @conversation = mailbox.inbox.find(params[:id])
+    end
 
     def fetch_params(key, *subkeys)
         params[key].instance_eval do

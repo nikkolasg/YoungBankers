@@ -4,6 +4,7 @@
 // Any JavaScript/Coffee file within this directory, lib/assets/javascripts, vendor/assets/javascripts,
 // or vendor/assets/javascripts of plugins, if any, can be referenced here using a relative path.
 //
+//
 // It's not advisable to add code directly here, but if you do, it'll appear at the bottom of the
 // compiled file.
 //
@@ -12,9 +13,20 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
+//= require jquery.slimscroll.min
+//= require_self
 //= require_tree .
 //= require typeahead
 //   SASS require //= require bootstrap-sprockets
 //   LESS require
 //= require twitter/bootstrap
+//= require turbolinks
+//
+
+
+window.onLoad = function (callback) {
+
+    $(document).ready(callback);
+    $(document).on('page:load',callback);
+
+};

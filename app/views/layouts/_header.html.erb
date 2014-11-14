@@ -31,37 +31,46 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Members <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li> <%= link_to "All Members", users_path %>
-                            </li>
-                            <li> <%= link_to "Profile", current_user %>
-                            </li>
-                            <li><a href="#">Messages</a>
-                            </li>
-                            <li> <%= link_to "Sign out", signout_path , method: "delete" %>
-                            </li>
-                </ul>
+                        </li>
+                        <li> <%= link_to "Profile", current_user %>
+                    </li>
+                    <li><%= link_to "Messages", conversations_path %>
                 </li>
-            <% else %>
-                <li class="dropdown" >
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"> Sign in <b class="caret"></b> </a>
-                    <div class="dropdown-menu" >
-                        <div class="navbar_login">
-                    <%= form_for(:session, url: sessions_path ) do |f| %>
-                        <div class="form-group">
-                        <%= f.text_field :email ,  class: "form-control input-md",autofocus: true, placeholder:"Email" %>
-                        <%= f.password_field :password,  class: "form-control input-md",placeholder: "Password" %>
+                <li> <%= link_to "Sign out", signout_path , method: "delete" %>
+            </li>
+                        </ul>
+                    </li>
+                <% else %>
+                    <li class="dropdown" >
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"> Sign in <b class="caret"></b> </a>
+                        <div class="dropdown-menu" style="padding: 10px; width: 250px" >
+                            <div class="navbar_login">
+                                <%= form_for(:session, url: sessions_path ) do |f| %>
+                                <div class="form-group">
+                                    <div style="padding:5px">
+                                    <%= f.text_field :email ,  class: "form-control input-md",style: "padding: 5px",autofocus: true, placeholder:"Email" %>
+                                    </div>
+                                    <div style="padding:5px">
+                                    <%= f.password_field :password,  class: "form-control input-md",style: "padding: 5px",placeholder: "Password" %>
+                                    </div>
+                                </div>
+                                <div class="pull-left" style="width: 50%">
+                                    <%= f.submit "Login", class:"btn btn-success" %>
+                                </div>
+                                <div class="pull-right" style="width: 50%" >
+                                    <%= link_to "Sign up!", new_user_path ,{ class: "btn btn-primary"}%>
+                                </div>
+                            </div>
+                        <% end %>
                         </div>
-                    <%= f.submit "Login", class:"btn btn-success" %>
-                        </div>
-                <% end %>
-                </div>
-     
-                    </div>
-                           <% end %>
-            </ul>
+
         </div>
-        <!-- /.navbar-collapse -->
+    <% end %>
+            </ul>
     </div>
-    <!-- /.container -->
+    <!-- /.navbar-collapse -->
+</div>
+<!-- /.container -->
 </div>
 
 

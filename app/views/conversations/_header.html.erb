@@ -20,9 +20,13 @@
                                 <div style="margin-top: 15px;">
                                     <ul class="nav nav-pills nav-stacked">
                                         <li class="header">Folders</li>
-                                        <li class="active"><a href="#"><i class="fa fa-inbox"></i> Inbox (14)</a></li>
-                                        <li><a href="#"><i class="fa fa-mail-forward"></i> Sent</a></li>
-                                        <li><a href="#"><i class="fa fa-folder"></i> Junk</a></li>
+                                        <% [:inbox,:sentbox,:trash].each do |type| %>
+                                            <li <%= "class='active'" if type == @type %> >
+                                                <%= link_to(conversations_path(box: type)) do %>
+                                                    <i class="fa fa-inbox"> </i> <%= type.to_s.capitalize %>
+                                            <% end %>
+                                            </li>
+                                        <% end %>
                                     </ul>
                                 </div>
                         </div><!-- /.col (LEFT) -->
