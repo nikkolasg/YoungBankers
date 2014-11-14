@@ -3,14 +3,14 @@
     <!-- THE MESSAGES -->
     <table class="table table-mailbox">
         <% @conversations.each do |c| %>
-            <%= link_to conversation_path(c) do %>  
-                <tr <%= "class=unread" if c.is_unread?(@user) %> >
+            <tr <%= "class=unread" if c.is_unread?(@user) %> >
+                <%= link_to conversation_path(c)  do   %>  
                     <td class="small-col"><input type="checkbox" /></td>
-                    <td class="name"><a href="#"><%= user_name(c.last_sender) %> </a></td>
-                    <td class="subject"><a href="#"> <%= c.subject %> </a></td>
+                    <td class="name"><%= link_to user_name(c.last_sender),conversation_path(c) %> </td>
+                    <td class="subject"> <%= link_to c.subject,conversation_path(c) %> </td>
                     <td class="time"> <%= time_string(c.created_at)%> </td>
-                </tr>
-            <% end %>
+                <% end %>
+            </tr>
         <% end %>
     </table>
 </div><!-- /.table-responsive -->
@@ -30,7 +30,6 @@
 <!-- MAILBOX END -->
 
 </section><!-- /.content -->
-</aside><!-- /.right-side -->
 </div><!-- ./wrapper -->
 
 <%= render 'footer' %>

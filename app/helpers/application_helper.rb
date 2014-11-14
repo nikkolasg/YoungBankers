@@ -12,7 +12,7 @@ module ApplicationHelper
     end
 
     def time_string time
-       time.strftime("%M:%H %d/%m/%y")  
+       time.strftime("%H:%M %d/%m/%y")  
     end
     def divider(size_col)
         ' <!-- DIVIDER -->

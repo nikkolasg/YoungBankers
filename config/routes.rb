@@ -11,7 +11,13 @@ Rails.application.routes.draw do
   # root 'welcome#index'
   resources :users
   resources :sessions, only: [ :new, :create, :destroy ]
-  resources :conversations
+  resources :conversations do 
+      member do
+          post :reply
+          post :trash
+          post :untrash
+      end
+  end
   get 'mailbox' => 'conversations#index'
   get 'organizations/auto_complete' => 'organizations#auto_complete'
   get 'organizations/list' => 'organizations#list'

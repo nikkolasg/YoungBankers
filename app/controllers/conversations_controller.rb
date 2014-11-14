@@ -3,12 +3,13 @@ class ConversationsController < ApplicationController
     helper_method :mailbox, :conversation
 
     def index
-        @conversations = mailbox.conversations
+        # inbox by default for now
+        @conversations = mailbox.inbox
         @user = current_user
     end
     
     def show
-        
+       @conversation = mailbox.inbox.find(params[:id]) 
     end
     
     def create 
@@ -44,10 +45,6 @@ class ConversationsController < ApplicationController
     def mailbox
         @mailbox ||= current_user.mailbox
     end 
-
-    def conversation
-        @conv ||= mailbox.conversations.find(params[:id])
-    end
 
     def fetch_params(key, *subkeys)
         params[key].instance_eval do

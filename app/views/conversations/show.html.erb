@@ -1,33 +1,53 @@
 <%= render 'header' %>
 
-    <div class="box">
-        <!-- TITLE conversation -->
-        <div class="box-header">
-            <i class="fa fa-comments"></i>
-            <h3 class="box-title"> <%= @conversation.subject %> </h3>
-        </div>
-        <!-- previous messages -->
-        <div class="slimScrollDiv" style="position:relative; overflow:hidden; width:auto height:auto">
-
-            <div class="chat-box chat" style="overflow:hidden;width:auto;height:auto;">
-            <%= @conversation.receipts_for(current_user).each do |receipt| %>
-                <div class="chat-item" >
-                    <p class="message">
-                    <% sender = receipt.message.sender %>
-                    <%= link_to user_name(sender), sender %> 
-                    <small class="text-muted pull-right" >
-                        <i class="fa fa-clock-o"> </i>
-                        time_string(receipt.updated_at)
-                    </small>
-
-                    </p>    
-                </div>
-            <% end %>
-            </div>
-        </div>
-
+<div class="box">
+    <!-- TITLE conversation -->
+    <div class="box-header"  >
+        <i class="fa fa-comments"></i>
+        <h3 class="box-title"> <%= @conversation.subject %> </h3>
     </div>
 
+    <div class="box-body chat" id="chat-box" >
+        <% @conversation.receipts_for(current_user).each do |receipt| %>
+            <div class="item" >
+                <p class="message">
+                <% sender = receipt.message.sender %>
+                 
+                    <%= link_to user_path(sender),class: "name" do  %>
+
+                    <small class="text-muted pull-right" >
+                        <i class="fa fa-clock-o"> </i>
+                        <%= time_string(receipt.updated_at) %>
+                    </small>
+                <% end %>
+                <%= receipt.message.body %>
+                </p>    
+            </div>
+        <% end %>
+    </div>
+    <div class="box-footer">
+        <div class="input-group">
+            <%= form_for :message, url: reply_conversation_path(@conversation) do |f| %>
+                <%= f.text_field :body, { class: "form-control",placeholder:"Type message ..." } %>
+                <div class="input-group-btn">
+                    <%= f.submit "Send",class: "btn btn-success" %> 
+                </div>
+            <% end %>
+        </div>
+    </div>
+</div>
+
+
+</div><!-- /.col (RIGHT) -->
+</div><!-- /.row -->
+</div><!-- /.box-body -->
+</div><!-- /.box -->
+</div><!-- /.col (MAIN) -->
+</div>
+<!-- MAILBOX END -->
+
+</section><!-- /.content -->
+</div><!-- ./wrapper -->
 
 
 <%= render 'footer' %>
