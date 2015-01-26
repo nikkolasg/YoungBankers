@@ -1,0 +1,5 @@
+First Name,Last Name,Gender,Email,Job,Organization,Country City,Address,Code
+<% @users.each do |u|  %>
+    <%=u.fname %>,<%=u.lname %>,<%=gender_for(u) %>,<%=u.email %>,<%u.organization.name %>,<%=u.country %>,<%=u.city %>,<%=u.address %>,<%=u.code_post %>
+    <%= "\n" %>
+<% end %>

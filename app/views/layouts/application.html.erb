@@ -8,7 +8,6 @@
 <%= csrf_meta_tags %>
 </head>
 <body>
-
 <%= render 'layouts/header' %>
 
 <!-- RUBY CODE INSIDE !! -->
@@ -16,15 +15,13 @@
         <div class="alert alert-<%= k %>"><%= v %> </div>
     <% end %>
 
-    <%= yield %>
+    <div id="body">
+        <%= yield %>
+    </div>
 
 <!-- END OF RUBY CODE -->
 
 <%= render 'layouts/footer' %>
-<%#<!-- JavaScript -->%>
-<%#<script src="js/jquery-1.10.2.js"></script>%>
-<%#<script src="js/bootstrap.js"></script>%>
-<%#<script src="js/modern-business.js"></script>%>
 
 
 

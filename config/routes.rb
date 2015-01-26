@@ -9,7 +9,13 @@ Rails.application.routes.draw do
   get 'services' => 'static_pages#services'
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
+  get 'users/excel' => 'users#export_excel'
   resources :users
+  resources :users do
+     member do
+        get :accept
+     end
+  end 
   resources :sessions, only: [ :new, :create, :destroy ]
   resources :conversations do 
       member do

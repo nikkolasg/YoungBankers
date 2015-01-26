@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141019150908) do
+ActiveRecord::Schema.define(version: 20141224130601) do
 
   create_table "mailboxer_conversation_opt_outs", force: true do |t|
     t.integer "unsubscriber_id"
@@ -97,6 +97,7 @@ ActiveRecord::Schema.define(version: 20141019150908) do
     t.string   "address"
     t.string   "code_post"
     t.integer  "organization_id"
+    t.boolean  "pending",                     default: true
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

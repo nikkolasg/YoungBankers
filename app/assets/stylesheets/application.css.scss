@@ -236,3 +236,22 @@ footer {
     background:transparent;
 }
 
+
+html,body {
+    height: 100%;
+}
+#holder {
+    min-height: 100%;
+    position: relative;
+}
+
+#body {
+    padding-bottom:100px;
+}
+
+.footer {
+    height: 100px;
+    width:100%;
+    position: absolute;
+    bottom: 0;
+}
