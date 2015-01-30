@@ -1,11 +1,19 @@
-<h1> Sign In ! </h1>
-<%= form_for(:session, url: sessions_path) do |s| %>
-    <%= s.label "Email " %>
-    <%= s.text_field :email  %>
-    <br>
-    <%= s.label "Password " %>
-    <%= s.password_field :password %>
-    <br>
-    <%= s.submit "Signin", id: "button_login" %>
-<% end %>
-<p> If new user, <%= link_to "sign up !", signup_path %> </p>
+<div class="container">
+<div class="col-lg-4 col-lg-offset-4">
+    <h2 class="text_center" > Sign In ! </h2>
+    <%= form_for(:session, url: sessions_path,class: "col-xs-8") do |s| %>
+        <div class="form-group">
+            <%= s.label "Email " %>
+            <%= s.text_field :email, class:"form-control"  %>
+        </div>
+        <div class="form-group">
+            <%= s.label "Password " %>
+            <%= s.password_field :passwordi, class: "form-control" %>
+        </div>
+        <div class="form-group" style="text-align:center">
+            <%= s.submit "Signin", id: "button_login", class:"btn btn-primary " %>
+        </div>
+    <% end %>
+    <p class="text_center"> If new user, <%= link_to "sign up !", signup_path %> </p>
+</div>
+</div>
