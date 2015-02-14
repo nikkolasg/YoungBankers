@@ -1,0 +1,69 @@
+<% title = "Hygiene and Health" %>
+<%= provide(:title,"Portefolio : #{title}") %>
+<div class="container">
+    <!-- BREADCRUMB -->
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header title"><%= title %>
+            <small>Get involved in a project</small>
+            </h1>
+            <ol class="breadcrumb">
+                <li><%= link_to("Home",home_path) %> </li>
+                <li> <a href="#"> Portfolio </a> </li>
+                <li class="active"><%= title %></li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="row">
+
+        <div class="col-md-7">
+            <%= link_to health_medecins_sans_frontieres_path do %>
+                <img class="img-responsive" src="http://www.simply-communicate.com/sites/default/files/MSF_logo.png">
+            <% end %>
+        </div>
+
+        <div class="col-md-5">
+            <h3><a href="http://www.msf.org/">MEDECINS SANS FRONTIERES    </a> </h3>
+            <h4>Fund consolidating</h4>
+            <p> Médecins Sans Frontières (MSF) is an international, independent, medical humanitarian organisation that delivers emergency aid to people affected by armed conflict, epidemics, natural disasters and exclusion from healthcare. MSF offers assistance to people based on need, irrespective of race, religion, gender or political affiliation. </p>
+
+    <%= link_to health_medecins_sans_frontieres_path,class: "btn btn-primary" do %>
+           View Project <i class="fa fa-angle-right"></i>
+        <% end %>
+        </div>
+
+    </div>
+
+    <hr>
+
+    <div class="row">
+
+        <div class="col-md-7">
+            <%= link_to health_handicap_international_path do %>
+                <img class="img-responsive" src="http://buildingmarkets.org/blogs/liberia/files/2013/03/handicap-logo.jpg">
+            <% end %>
+        </div>
+
+        <div class="col-md-5">
+            <h3><a href="http://www.handicap-international.org/">HANDICAP INTERNATIONAL</a></h3>
+            <h4>Raising funds </h4>
+            <p>"<b>Handicap International</b> is an independent and impartial aid organisation working in situations of poverty and exclusion, conflict and disaster. We work alongside people with disabilities and vulnerable populations, taking action and bearing witness in order to respond to their essential needs, improve their living conditions and promote respect for their dignity and fundamental rights."</p>
+            <%= link_to health_handicap_international_path,class: "btn btn-primary" do %>
+            View Project <i class="fa fa-angle-right"></i>
+        <% end %>
+        </div>
+
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+

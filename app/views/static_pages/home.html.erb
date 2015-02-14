@@ -185,34 +185,34 @@
                     <hr>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-6">
-                    <a href="portfolio-item.html">
-                        <img class="img-responsive img-home-portfolio" src="/images/ecologyfin.jpg">
-                    </a>
+                    <%= link_to portfolio_environment_path do %>
+                        <%= image_tag("img_environment.JPG",class: "img-responsive img-home-portfolio") %>
+                    <% end %>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-6">
-                    <a href="portfolio-item.html">
-                        <img class="img-responsive img-home-portfolio" src="/images/wwww.JPG">
-                    </a>
+                    <%= link_to portfolio_animals_path do %>
+                        <%= image_tag("img_animal-welfare.jpeg",class: "img-responsive img-home-portfolio") %>
+                    <% end %>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-6">
-                    <a href="portfolio-item.html">
-                        <img class="img-responsive img-home-portfolio" src="/images/h%26h_fin.jpg">
-                    </a>
+                    <%= link_to portfolio_health_hygiene_path do %>
+                        <%= image_tag("h&h_fin.jpg",class: "img-responsive img-home-portfolio") %>
+                    <% end %>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-6">
-                    <a href="portfolio-item.html">
-                        <img class="img-responsive img-home-portfolio" src="/images/education_fin.jpg">
-                    </a>
+                    <%= link_to portfolio_education_path do %>
+                        <%= image_tag("education_fin.jpg", class: "img-responsive img-home-portfolio") %>
+                    <% end %>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-6">
-                    <a href="portfolio-item.html">
-                        <img class="img-responsive img-home-portfolio" src="/images/hunger.JPG">
-                    </a>
+                    <%= link_to portfolio_poverty_path do %>
+                        <%= image_tag("pov-alev.JPG",  class: "img-responsive img-home-portfolio") %>
+                    <% end %>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-6">
-                    <a href="portfolio-item.html">
-                        <img class="img-responsive img-home-portfolio" src="/images/infrastructure.JPG">
-                    </a>
+                    <%= link_to portfolio_infrastructure_path do %>
+                        <%= image_tag("infrastructure.JPG",class: "img-responsive img-home-portfolio") %>
+                    <% end %>
                 </div>
             </div>
             <!-- /.row -->

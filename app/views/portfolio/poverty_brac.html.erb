@@ -1,0 +1,111 @@
+<% title = "BRAC" %>
+<% provide(:title,"Portfolio : #{title} ") %>
+
+<div class="container">
+    <!-- BREADCRUMB -->
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header title"><%= title %>
+            <small>Get involved in a project</small>
+            </h1>
+            <ol class="breadcrumb">
+                <li><%= link_to("Home",home_path) %> </li>
+                <li> <a href="#"> Portfolio </a> </li>
+                <li> <%= link_to("Poverty Aleviation",portfolio_poverty_path) %> </li>
+                <li class="active"><%= title %></li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="row">
+
+        <div class="col-lg-12">
+            <center>
+                <a href="http://www.brac.net/"><img class="img-responsive" src="https://fbcdn-sphotos-d-a.akamaihd.net/hphotos-ak-xpf1/t31.0-8/c0.103.851.315/p851x315/10582978_10152737727405555_8091841328037805760_o.jpg"></a></center>
+        </div>
+
+    </div>
+    <!-- /.row -->
+
+    <!-- Service Paragraphs -->
+
+    <div class="row">
+
+        <div class="col-md-8">
+            <h2 class="page-header">Funding</h2>
+            <p>"<a href="http://www.brac.net/">BRAC</a> believes that poverty is a system and its underlying causes are manifold and interlinked. Some of these linkages are obvious, for example, a day’s wage forgone because of illness or resources lost to a natural disaster. Others play a more indirect role in perpetuating poverty, such as lack of awareness about laws and rights can lead not only to outright exploitation, but also encourage a lack of accountability on the part of the state to cater to its most vulnerable citizens. </p>
+
+            <p>In order for the poor to come out of poverty, they must have the tools to fight it across all fronts. We have, therefore, developed support services in the areas of human rights and social empowerment, education and health, economic empowerment and enterprise development, livelihood training, environmental sustainability and disaster preparedness.</p>
+
+            <p>We operate social enterprises that are strategically connected to our development programmes, and form crucial value chain linkages which increase the productivity of our members’ assets and labour, and reduce risks of their enterprises. These enterprises, ranging from agriculture to handicrafts, also help to make us increasingly self-reliant.</p>
+
+            <p>Gender equality, respect for the environment and inclusivity are themes crosscutting all of our activities.</p>
+
+            <p>To ensure that we are always learning and that our work is always relevant, we have put in place training, research and monitoring systems across all our activities and financial checks and balances in the form of audits. As a knowledge centre, we have opened our doors to the wider public in an effort to develop national capacity in Bangladesh through BRAC University.</p>
+
+            <p>But what we really do is best portrayed in the true life stories of those who make the real changes."</p>
+        </div> 
+
+        <div class="col-md-4">
+            <h3 class="page-header">Areas of work</h3>
+            <ul>
+                <li>Agriculture and Food Security</li>
+                <li>Community Empowerment</li>
+                <li>Disaster, Environment and Climate Change</li>
+                <li>Education</li>
+                <li>Gender, Justice and Diversity</li>
+                <li>Health Nutrition and Population</li>
+                <li>Human Rights and Legal Aid Services</li>
+                <li>Intergrated Development</li>
+                <li>Microfinance</li>
+                <li>Road Safety</li>
+                <li>Migration</li>
+                <li>Social Enterprises</li>
+                <li>Socially Responsible Investments</li>
+                <li>Targeting Extreme Poverty</li>
+                <li>Water, Sanitation and Hygiene</li>
+                <li>Support Programmes</li>
+
+
+
+
+            </ul>
+        </div>    
+
+    </div>
+
+    <div class="row">
+
+        <div class="col-lg-12">
+            <h3 class="page-header">Related Projects</h3>
+        </div>
+
+        <div class="col-sm-3 col-xs-6">
+            <%= link_to poverty_acumen_path do %>
+                <img class="img-responsive img-customer" src="img/acumen.jpeg.png">
+            <% end %>
+        </div>
+
+        <div class="col-sm-3 col-xs-6">
+            <%= link_to poverty_mercy_corps_path do %>
+                <img class="img-responsive img-customer" src="https://www.jivesoftware.com/wp-content/uploads/2014/09/MercyCorps_Color-300x240.png">
+            <% end %>
+        </div>
+
+        <div class="col-sm-3 col-xs-6">
+            <%= link_to poverty_international_rescue_committee_path do %>
+                <img class="img-responsive img-customer" src="http://www.rescue.org/sites/default/files/imagecache/Regular/migrated/images/irc-logo-color-222.jpg">
+            <% end %>
+        </div>
+
+        <div class="col-sm-3 col-xs-6">
+            <%= link_to health_handicap_international_path do %>
+                <img class="img-responsive img-customer" src="http://www.handicap-international.org.uk/OneStopCMS/Sites/Handicap/Theme/images/logo.gif">
+            <% end %>
+        </div>
+
+
+    </div>
+
+</div>
+

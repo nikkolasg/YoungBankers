@@ -1,0 +1,88 @@
+<% title = "Reach Out To Asia" %>
+<% provide(:title,"Portfolio : #{title} ") %>
+
+
+<div class="container">
+    <!-- BREADCRUMB -->
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header title"><%= title %>
+        </h1>
+        <ol class="breadcrumb">
+            <li><%= link_to("Home",home_path) %> </li>
+            <li> <a href="#"> Portfolio </a> </li>
+            <li><%=link_to("Health & Hygiene",hygiene_health_path) %></li>
+            <li class="active"><%= title %></li>
+        </ol>
+        </div>
+    </div>
+
+    <div class="row">
+
+        <div class="col-lg-12">
+            <center>
+                <a href="http://www.reachouttoasia.org"><img class="img-responsive" src="http://www.reachouttoasia.org/sites/default/files/BangladeshHigh-edited-for-website%20copy.jpg?1369301716"></a></center>
+        </div>
+
+    </div>
+    <!-- /.row -->
+
+    <!-- Service Paragraphs -->
+
+    <div class="row">
+
+        <div class="col-md-8">
+            <h2 class="page-header">Approach</h2>
+            <p>"Our approach focuses on promoting and investing in access to quality education and in the development of human resources, in close partnership with local and international communities. We apply the following tactics to accomplish our goals.</p>
+            <ul type="disc">
+                <li>Understanding      the needs of local communities before offering solutions</li>
+                <li>Collaborating      with communities to ensure program support and sustainability</li>
+                <li>Empowering      youth to become leaders in society</li>
+                <li>Promoting      cultural dialogue and fostering a sense of unity</li>
+                <li>Employing      cutting-edge technology to facilitate programs</li>
+                <li>Connecting      universities within the region</li>
+            </ul> </br>
+
+
+            <p>ROTA has identified ten countries where immediate action is a priority:</p>
+            <ul>
+                <li>Afghanistan</li>
+                <li>Bangladesh</li>
+                <li>Cambodia</li>
+                <li>Indonesia</li>
+                <li>Iraq</li>
+                <li>Lebanon</li>
+                <li>Nepal</li>
+                <li>Pakistan</li>
+                <li>Occupied Palestinian Territories</li>
+                <li>Syria"&nbsp;</li>
+            </ul>
+
+        </div> 
+
+        <div class="col-md-4">
+            <h3 class="page-header"><a href="http://www.reachouttoasia.org/en/our-mission-and-goals">Their Mission</a></h3>
+            <p>"ROTA envisages a world in which all young people have access to the education and training they need in order to realize their full potential and shape the development of their communities. ROTA’s mission is that, together with partners, volunteers, and local communities, ROTA works to ensure that people affected by crisis across Asia and around the world have continuous access to relevant and high-quality primary and secondary education. ROTA operates in ten countries across Asia; in Qatar, ROTA engages young people and other community members in addressing educational and development challenges both at home and abroad.</p>
+
+
+            <p>ROTAs pathway to achieving this vision and mission is through enhancing skills development, using sports as a tool for education, integrating environment education, and revitalizing the use of Arabic. In the coming years, ROTA will strive to deliver on its mission through becoming a pioneering and top ranked Qatari NGO with a significant donor and partnership base, directly supporting education programs in Asia."</p>
+        </div>    
+
+    </div>
+
+    <div class="row">
+
+        <div class="col-lg-12">
+            <h3 class="page-header">Related Projects</h3>
+        </div>
+
+        <div class="col-sm-3 col-xs-6">
+            <%= link_to education_barefoot_college_path do %>
+                <img class="img-responsive img-customer" src="http://www.tomorrowpartners.com/wp-content/uploads/2013/12/logo_barefoot_college_gray_SMALL.png">
+            <% end %>
+        </div>
+
+    </div>
+
+</div>
+

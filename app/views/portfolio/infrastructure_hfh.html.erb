@@ -1,0 +1,76 @@
+<% title = "Habitet For Humanity"" %>
+<% provide(:title,"Portfolio : #{title} ") %>
+
+<div class="container">
+    <!-- BREADCRUMB -->
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header title"><%= title %>
+            <small>Get involved in a project</small>
+            </h1>
+            <ol class="breadcrumb">
+                <li><%= link_to("Home",home_path) %> </li>
+                <li> <a href="#"> Portfolio </a> </li>
+                <li> <%= link_to("Poverty Aleviation",poverty_portfolio_path) %> </li>
+                <li class="active"><%= title %></li>
+            </ol>
+        </div>
+    </div>
+
+
+    <div class="row">
+
+        <div class="col-lg-12">
+            <center>
+                <a href="http://www.habitat.org/"><img class="img-responsive" src="http://cuhabitat.org/wp-content/uploads/2012/10/slide-12.jpg"></a></center>
+        </div>
+
+    </div>
+    <!-- /.row -->
+
+    <!-- Service Paragraphs -->
+
+    <div class="row">
+
+        <div class="col-md-8">
+            <h2 class="page-header">Funding</h2>
+            <p>"The mission statement of Habitat for Humanity is "Seeking to put God’s love into action, Habitat for Humanity brings people together to build homes, communities and hope". Homes are built using volunteer labor and are sold at no profit. </\br>In some locations outside the United States, Habitat for Humanity charges interest to protect against inflation. This policy has been in place since 1986. <\br>Habitat has helped more than 4 million people construct, rehabilitate or preserve homes since its founding in 1976, making Habitat the largest not-for-profit builder in the world."</p>
+        </div> 
+
+
+    </div>
+
+    <div class="row">
+
+        <div class="col-lg-12">
+            <h3 class="page-header">Related Projects</h3>
+        </div>
+
+        <div class="col-sm-3 col-xs-6">
+            <%= link_to portfolio_environment_path do %>
+                <img class="img-responsive img-customer" src="img/img_environment.JPG">
+            <% end %>
+        </div>
+
+        <div class="col-sm-3 col-xs-6">
+            <%= link_to portfolio_poverty_path do %>
+                <img class="img-responsive img-customer" src="img/pov-alev.JPG">
+            <% end %>
+        </div>
+
+        <div class="col-sm-3 col-xs-6">
+            <%= link_to portfolio_health_hygiene_path do %>
+                <img class="img-responsive img-customer" src="img/h&h_fin.jpg">
+            <% end %>
+        </div>
+
+        <div class="col-sm-3 col-xs-6">
+            <%= link_to portfolio_education_path do %>
+                <img class="img-responsive img-customer" src="img/education_fin.jpg">
+            <% end %>
+        </div>
+
+    </div>
+
+</div>
+

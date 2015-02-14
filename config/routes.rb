@@ -32,7 +32,27 @@ Rails.application.routes.draw do
   delete 'signout' => 'sessions#destroy'
 
   get 'profile' => 'users#show' 
-
+    
+  ## Portfolio pages.
+  ## For now, is in static mode. one page is hardcoded.
+  ## Not the will to do a full CRUD stack for this, not for mr. carrel.
+  ### But will do later
+  get 'portfolio_animals' => 'portfolio#animals'
+  get 'portfolio_environment' => 'portfolio#environment'
+  get 'portfolio_health_hygiene' => 'portfolio#health_hygiene'
+  get 'portfolio_education' => 'portfolio#education'
+  get 'portfolio_poverty' => 'portfolio#poverty'
+  get 'portfolio_infrastructure' => 'portfolio#infrastructure'
+  ## sub items
+  get 'education_rota' => 'portfolio#education_rota'
+  get 'education_barefoot_college' => 'portfolio#education_bf'
+  get 'health_handicap_international' => 'portfolio#health_hi'
+  get 'health_medecins_sans_frontieres' => 'portfolio#health_msf'
+  get 'infrastructure_habitat_for_humanity' => 'portfolio#infra_hfh'
+  get 'poverty_acumen' => 'portfolio#poverty_acumen'
+  get 'poverty_brac' => 'portfolio#poverty_brac'
+  get 'poverty_international_rescue_committee' => 'portfolio#poverty_irc'
+  get 'poverty_mercy_corps' => 'portfolio#poverty_mercy_corps'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

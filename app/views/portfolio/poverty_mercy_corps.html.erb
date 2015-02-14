@@ -1,0 +1,98 @@
+<% title = "Mercy Corps" %>
+<% provide(:title,"Portfolio : #{title} ") %>
+
+<div class="container">
+    <!-- BREADCRUMB -->
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header title"><%= title %>
+            <small>Get involved in a project</small>
+            </h1>
+            <ol class="breadcrumb">
+                <li><%= link_to("Home",home_path) %> </li>
+                <li> <a href="#"> Portfolio </a> </li>
+                <li> <%= link_to("Poverty Aleviation",portfolio_poverty_path) %> </li>
+                <li class="active"><%= title %></li>
+            </ol>
+        </div>
+    </div>
+
+
+    <div class="row">
+
+        <div class="col-lg-12">
+            <center>
+                <a href="http://www.mercycorps.org/"><img class="img-responsive" src="http://www.getstorywise.com/word/wp-content/uploads/2014/06/MercyCorps_SouthSudan_1920x1080-1280x768.png"></a></center>
+        </div>
+
+    </div>
+    <!-- /.row -->
+
+    <!-- Service Paragraphs -->
+
+    <div class="row">
+
+        <div class="col-md-8">
+            <h2 class="page-header">Mercy Corps saves and improves lives in the world's toughest places.</h2>
+            <p>"Based in Portland but active in over 41 countries, Mercy Corps’ pioneering commitment to using relief and recovery programs to strengthen civil society for the long-term has seen the diversification of its high-impact, cost effective activities across a range of program areas and locations.</p>
+
+            <p>What sets the organization apart is its leadership in using social innovation as an engine for sustainable development – and unlike other actors focusing on entrepreneurial strategies in ‘stable’ operating environments, Mercy Corps works in this way with affected communities as a means to accelerate the process of post-disaster or post-collapse recovery. From helping restore local economies in the aftermath of the Haiti earthquake via a mobile banking solution, to fighting malnutrition in Indonesian slums through a microfranchise system of vendor-managed food carts, the NGO consistently looks to foster indigenous entrepreneurship, rebuilding social capital and stimulating markets.</p>
+
+            <p>Convinced of the value of taking ‘responsible risks’ – backed by rigorous monitoring and evaluation – Mercy Corps focuses especially on engaging partner communities to identify solutions proven to work in specific contexts and bring these to scale. As such, the organization’s greatest impact is arguably linked to its ability to strengthen the resilience of communities with a view to future shocks, beyond the millions of lives touched through immediate relief efforts."</p>
+        </div> 
+
+        <div class="col-md-4">
+            <h3 class="page-header"><a href="http://www.mercycorps.org/about-us">Areas of work</a></h3>
+            <ul>
+                <li>Agriculture & Food </li>
+                <li>Education</li>
+                <li>Children & Youth</li>
+                <li>Conflict Management</li>
+                <li>Disaster Preparedness</li>
+                <li>Economic Opportunity</li>
+                <li>Health</li>
+                <li>Emergency Response</li>
+                <li>Environment</li>
+                <li>Innovations</li>
+                <li>Water</li>
+                <li>Women & Gender</li>
+            </ul>
+        </div>    
+
+
+    <div class="row">
+
+
+
+        <div class="col-lg-12">
+            <h3 class="page-header">Related Projects</h3>
+        </div>
+
+        <div class="col-sm-3 col-xs-6">
+            <%= link_to poverty_brac_path do %>
+                <img class="img-responsive img-customer" src="http://www.commonwealthfoundation.com/sites/cwf/files/styles/listing_thumbnail/public/listing-images/brac%20logo2.jpg">
+            <% end %>
+        </div>
+
+        <div class="col-sm-3 col-xs-6">
+            <%= link_to poverty_acumen_path do %>
+                <img class="img-responsive img-customer" src="img/acumen.jpeg.png">
+            <% end %>
+        </div>
+
+        <div class="col-sm-3 col-xs-6">
+            <%= link_to poverty_international_rescue_committee_path do %>
+                <img class="img-responsive img-customer" src="http://www.rescue.org/sites/default/files/imagecache/Regular/migrated/images/irc-logo-color-222.jpg">
+            <% end %>
+        </div>
+
+        <div class="col-sm-3 col-xs-6">
+            <%= link_to health_handicap_international_path do %>
+                <img class="img-responsive img-customer" src="http://www.handicap-international.org.uk/OneStopCMS/Sites/Handicap/Theme/images/logo.gif">
+            <% end %>
+        </div>
+
+    </div>
+
+</div>
+

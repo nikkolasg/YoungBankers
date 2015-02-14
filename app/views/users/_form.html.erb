@@ -13,8 +13,7 @@
                         <div class="col-md-3 text_center">
                             <div class="row">
                             <!-- PROFILE PIC -->
-                             
-                            <img id="user_picture" width="128" height="128" src="/images/default_user_picture.png" class="img-thumbmail img-responsive" style="margin: 0 auto;" />
+                            <%= image_tag("user128.png",id:"user_picture", width:"128",height:"128", class:"img-thumbmail img-responsive", style:"margin:0 auto;") %>  
                             <a  href="javascript:document.getElementById('user_avatar').click();"  id="btn_file" > Change picture </a>
                             <%= u.file_field :avatar , style: "display:none;"%> 
                         </div>
