@@ -1,0 +1,70 @@
+<% title = "Barefoot College" %>
+<% provide(:title,"Portfolio : #{title} ") %>
+<%= page_width = "col-lg-9" %>
+<%= page_offset = "col-lg-offset-1" %>
+
+
+<div class="container">
+    <!-- BREADCRUMB -->
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header"><%= title %>
+        </h1>
+        <ol class="breadcrumb">
+            <li><%= link_to("Home",home_path") %> </li>
+            <li> <a href="#"> Portfolio </a> </li>
+            <li><%=link_to("Health & Hygiene",hygiene_health_path) %></li>
+            <li class="active"><%= title %></li>
+        </ol>
+        </div>
+    </div>
+
+    <div class="row">
+
+        <div class="col-lg-12">
+            <center>
+                <a href="http://www.barefootcollege.org/"><img class="img-responsive" src="http://www.magazineim.com/home/wp-content/uploads/2013/09/Barefoot-UN-Women.jpg"></a></center>
+        </div>
+
+    </div>
+    <!-- /.row -->
+
+    <!-- Service Paragraphs -->
+
+    <div class="row">
+
+        <div class="col-md-8">
+            <h2 class="page-header">Funding</h2>
+            <p>"In the recent documentary Solar Mamas, a 32-year-old, tent-dwelling Jordanian mother with only five years of primary education travels to India for six months of hands-on training, culminating in a return to her desert community armed with the skills to fabricate, install and maintain solar power technology – a journey that would seem scarcely believable, save for the fact it has been replicated by others time and time again. Founded by Bunker Roy in 1972 to provide basic services and solutions to problems in rural communities in his native India, Barefoot College has since nurtured a form of grassroots social entrepreneurship that has won plaudits for its success in helping participants forge their own path out of poverty.
+
+            Open only to individuals without a formal education, the organization’s innovative – and powerful – model employs peer-to-peer learning, grounded in practical knowledge, to demystify and decentralize sophisticated technology, in the process training an army of ‘barefoot professionals’: teachers, doctors, midwives, mechanics and architects in the millions."</p>
+        </div> 
+
+        <div class="col-md-4">
+            <h3 class="page-header"><a href="http://www.barefootcollege.org/solutions/solar-solutions/">Areas of work</a></h3>
+            <ul>
+                <li>Education</li>
+                <li>Solar</li>
+                <li>Water</li>
+                <li>Livelihood</li>
+                <li>Activism</li>
+                <li>Women Rights</li>
+            </ul>
+        </div>    
+
+    </div>
+    <div class="row">
+
+        <div class="col-lg-12">
+            <h3 class="page-header">Related Projects</h3>
+        </div>
+
+        <div class="col-sm-3 col-xs-6">
+            <a href="education_item_ROTA.html">
+                <img class="img-responsive img-customer" src="http://www.reachouttoasia.org/sites/default/files/zen_rota_logo.png">
+            </a>
+        </div>
+    </div>
+
+</div>
+

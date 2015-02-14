@@ -1,0 +1,54 @@
+<% title = "Medecins Sans Frontieres" %>
+<% provide(:title,"Portfolio : #{title} ") %>
+<%= page_width = "col-lg-9" %>
+<%= page_offset = "col-lg-offset-1" %>
+
+
+<div class="container">
+    <!-- BREADCRUMB -->
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header"><%= title %>
+        </h1>
+        <ol class="breadcrumb">
+            <li><%= link_to("Home",home_path") %> </li>
+            <li> <a href="#"> Portfolio </a> </li>
+            <li><%=link_to("Health & Hygiene",hygiene_health_path) %></li>
+            <li class="active"><%= title %></li>
+        </ol>
+        </div>
+    </div>
+    <!-- Service Paragraphs -->
+
+    <div class="row">
+
+        <div class="col-md-8">
+            <h2 class="page-header">Funding</h2>
+            <p>"Launchpad for the now inescapable ‘without borders’ movement, Médecins Sans Frontières has developed, over the course of its 41-year history, an enviable – or infamous, depending on one’s viewpoint – reputation for combining unparalleled medical assistance in the most fearsome conditions with an outspoken commitment to principled activism in the face of perceived rights violations, dereliction of duty by the international community or threats to the neutrality of humanitarian space due to the merging of civil-military missions.</p>
+
+            <p>Founded in 1971 by 13 doctors – including former French Foreign Minister, Bernard Kouchner – the organization is presently active in 68 countries, with operations encompassing close to 32,000 staff.</p>
+
+            <p>A key factor in the ability of Médecins Sans Frontières to ‘bear witness’ and take sometimes controversial ethical stands against governments and other actors is its funding model, which unlike most major humanitarian NGOs is predominantly based around private donations rather than institutional grants (the former representing 89 percent of total income in 2011). This independence, which often extends to a tendency to avoid collaboration in the context of its strategic interventions, has at times led to criticism of a pervasive ‘lone crusader’ attitude.</p>
+
+            <p>Nonetheless, never in question is the impact of the organization’s operations, which range from addressing the ravages of armed conflict, to emergency action to stem the spread of epidemics in situations of state incapacity.</p>
+
+            <p>Médecins Sans Frontières has also been innovative in its approach to dealing with operational challenges, establishing the ‘Access Campaign’ to reduce prices for medicines, diagnostics and vaccines and stimulate the development of improved treatments, setting up affiliated organization, Epicentre, to conduct epidemiological research and assessments, and partnering in the Drugs for Neglected Diseases initiative."</p>
+        </div> 
+    </div>
+
+
+    <div class="row">
+
+        <div class="col-lg-12">
+            <h3 class="page-header">Related Projects</h3>
+        </div>
+
+        <div class="col-sm-3 col-xs-6">
+            <a href="health_item_HI.html">
+                <img class="img-responsive img-customer" src="http://upload.wikimedia.org/wikipedia/fr/9/9d/Handicap_International_logo.jpg">
+            </a>
+        </div>
+
+
+    </div>
+</div>
