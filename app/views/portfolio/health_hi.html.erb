@@ -1,19 +1,17 @@
 <% title = "Handicap International" %>
 <% provide(:title,"Portfolio : #{title} ") %>
-<%= page_width = "col-lg-9" %>
-<%= page_offset = "col-lg-offset-1" %>
 
 
 <div class="container">
     <!-- BREADCRUMB -->
     <div class="row">
         <div class="col-lg-12">
-            <h1 class="page-header"><%= title %>
+            <h1 class="page-header title"><%= title %>
         </h1>
         <ol class="breadcrumb">
-            <li><%= link_to("Home",home_path") %> </li>
+            <li><%= link_to("Home",home_path) %> </li>
             <li> <a href="#"> Portfolio </a> </li>
-            <li><%=link_to("Health & Hygiene",hygiene_health_path) %></li>
+            <li><%=link_to("Health & Hygiene",portfolio_health_hygiene_path) %></li>
             <li class="active"><%= title %></li>
         </ol>
         </div>
@@ -60,28 +58,28 @@
         </div>
 
         <div class="col-sm-3 col-xs-6">
-            <a href="health_item_MSF.html">
+            <%= link_to health_medecins_sans_frontieres_path do %>
                 <img class="img-responsive img-customer" src="http://www.msf.org/sites/msf.org/themes/custom/msf_org_zen/images/logo-fb.png">
-            </a>
+            <% end %>
         </div>
 
 
         <div class="col-sm-3 col-xs-6">
-            <a href="poverty_item_ACUMEN.html">
+            <%= link_to poverty_acumen_path do %>
                 <img class="img-responsive img-customer" src="img/acumen.jpeg.png">
-            </a>
+            <% end %>
         </div>
 
         <div class="col-sm-3 col-xs-6">
-            <a href="poverty_item_MERCY-CORPS.html">
+            <%= link_to poverty_mercy_corps_path do %>
                 <img class="img-responsive img-customer" src="https://www.jivesoftware.com/wp-content/uploads/2014/09/MercyCorps_Color-300x240.png">
-            </a>
+            <% end %>
         </div>
 
         <div class="col-sm-3 col-xs-6">
-            <a href="poverty_item_IRC.html">
+            <%= link_to poverty_international_rescue_committee_path do %>
                 <img class="img-responsive img-customer" src="http://www.rescue.org/sites/default/files/imagecache/Regular/migrated/images/irc-logo-color-222.jpg">
-            </a>
+            <% end %>
         </div>
 
 

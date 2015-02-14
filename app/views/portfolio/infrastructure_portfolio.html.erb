@@ -1,17 +1,15 @@
 <% title = "Infrastructure " %>
 <% provide(:title,"Portfolio : #{title} ") %>
-<%= page_width = "col-lg-9" %>
-<%= page_offset = "col-lg-offset-1" %>
 
 <div class="container">
     <!-- BREADCRUMB -->
     <div class="row">
         <div class="col-lg-12">
-            <h1 class="page-header"><%= title %>
+            <h1 class="page-header title"><%= title %>
             <small>Get involved in a project</small>
             </h1>
             <ol class="breadcrumb">
-                <li><%= link_to("Home",home_path") %> </li>
+                <li><%= link_to("Home",home_path) %> </li>
                 <li> <a href="#"> Portfolio </a> </li>
                 <li class="active"><%= title %></li>
             </ol>
@@ -20,9 +18,9 @@
     <div class="row">
 
         <div class="col-md-7">
-            <a href="infrastructure_item_HFH.html">
+            <%= link_to infrastructure_habitat_for_humanity_path do %>
                 <center><img class="img-responsive" src="http://brandvessel.com/var/clients/habitat_for_humanity_logo.jpg"></center> 
-            </a>
+            <% end %>
         </div>
 
         <div class="col-md-5">
@@ -30,7 +28,9 @@
             <h4>Fund consolidating</h4>
             <p>A non profit, Christian housing ministry. Using volonteer labor and donations, Habitat for Humanity provides shelter for those who can't afford a decent and safe place to live.  </p>
 
-            <a class="btn btn-primary" href="infrastructure_item_HFH.html">View Project <i class="fa fa-angle-right"></i></a>
+            <%= link_to infrastructure_habitat_for_humanity_path, class: "btn btn-primary" do %>
+            View Project <i class="fa fa-angle-right"></i>
+        <% end %>
         </div>
 
     </div>

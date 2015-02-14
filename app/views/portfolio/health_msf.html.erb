@@ -1,24 +1,30 @@
 <% title = "Medecins Sans Frontieres" %>
 <% provide(:title,"Portfolio : #{title} ") %>
-<%= page_width = "col-lg-9" %>
-<%= page_offset = "col-lg-offset-1" %>
 
 
 <div class="container">
     <!-- BREADCRUMB -->
     <div class="row">
         <div class="col-lg-12">
-            <h1 class="page-header"><%= title %>
+            <h1 class="page-header title"><%= title %>
         </h1>
         <ol class="breadcrumb">
-            <li><%= link_to("Home",home_path") %> </li>
+            <li><%= link_to("Home",home_path) %> </li>
             <li> <a href="#"> Portfolio </a> </li>
-            <li><%=link_to("Health & Hygiene",hygiene_health_path) %></li>
+            <li><%=link_to("Health & Hygiene",portfolio_health_hygiene_path) %></li>
             <li class="active"><%= title %></li>
         </ol>
         </div>
     </div>
     <!-- Service Paragraphs -->
+    <div class="row">
+
+        <div class="col-lg-12">
+            <center>
+                <a href="http://www.msf.org/"><img class="img-responsive" src="http://www.doctorswithoutborders.org/sites/usa/files/50451.jpg"></a></center>
+        </div>
+
+    </div>
 
     <div class="row">
 
@@ -44,9 +50,9 @@
         </div>
 
         <div class="col-sm-3 col-xs-6">
-            <a href="health_item_HI.html">
+            <%= link_to health_handicap_international_path do %>
                 <img class="img-responsive img-customer" src="http://upload.wikimedia.org/wikipedia/fr/9/9d/Handicap_International_logo.jpg">
-            </a>
+            <% end %>
         </div>
 
 

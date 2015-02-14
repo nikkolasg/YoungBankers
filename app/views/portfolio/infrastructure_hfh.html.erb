@@ -1,17 +1,15 @@
 <% title = "Habitet For Humanity"" %>
 <% provide(:title,"Portfolio : #{title} ") %>
-<%= page_width = "col-lg-9" %>
-<%= page_offset = "col-lg-offset-1" %>
 
 <div class="container">
     <!-- BREADCRUMB -->
     <div class="row">
         <div class="col-lg-12">
-            <h1 class="page-header"><%= title %>
+            <h1 class="page-header title"><%= title %>
             <small>Get involved in a project</small>
             </h1>
             <ol class="breadcrumb">
-                <li><%= link_to("Home",home_path") %> </li>
+                <li><%= link_to("Home",home_path) %> </li>
                 <li> <a href="#"> Portfolio </a> </li>
                 <li> <%= link_to("Poverty Aleviation",poverty_portfolio_path) %> </li>
                 <li class="active"><%= title %></li>
@@ -49,27 +47,27 @@
         </div>
 
         <div class="col-sm-3 col-xs-6">
-            <a href="ecology_portfolio.html">
+            <%= link_to portfolio_environment_path do %>
                 <img class="img-responsive img-customer" src="img/img_environment.JPG">
-            </a>
+            <% end %>
         </div>
 
         <div class="col-sm-3 col-xs-6">
-            <a href="poverty_portfolio.html">
+            <%= link_to portfolio_poverty_path do %>
                 <img class="img-responsive img-customer" src="img/pov-alev.JPG">
-            </a>
+            <% end %>
         </div>
 
         <div class="col-sm-3 col-xs-6">
-            <a href="health.html">
+            <%= link_to portfolio_health_hygiene_path do %>
                 <img class="img-responsive img-customer" src="img/h&h_fin.jpg">
-            </a>
+            <% end %>
         </div>
 
         <div class="col-sm-3 col-xs-6">
-            <a href="education_portfolio.html">
+            <%= link_to portfolio_education_path do %>
                 <img class="img-responsive img-customer" src="img/education_fin.jpg">
-            </a>
+            <% end %>
         </div>
 
     </div>

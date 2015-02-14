@@ -11,9 +11,9 @@
             <small>Get involved in a project</small>
             </h1>
             <ol class="breadcrumb">
-                <li><%= link_to("Home",home_path") %> </li>
+                <li><%= link_to("Home",home_path) %> </li>
                 <li> <a href="#"> Portfolio </a> </li>
-                <li> <%= link_to("Poverty Aleviation",poverty_portfolio_path) %> </li>
+                <li> <%= link_to("Poverty Aleviation",portfolio_poverty_path) %> </li>
                 <li class="active"><%= title %></li>
             </ol>
         </div>
@@ -65,27 +65,27 @@
         </div>
 
         <div class="col-sm-3 col-xs-6">
-            <a href="poverty_item_BRAC.html">
+            <%= link_to poverty_brac_path do %>
                 <img class="img-responsive img-customer" src="http://www.commonwealthfoundation.com/sites/cwf/files/styles/listing_thumbnail/public/listing-images/brac%20logo2.jpg">
-            </a>
+            <% end %>
         </div>
 
         <div class="col-sm-3 col-xs-6">
-            <a href="poverty_item_ACUMEN.html">
+            <%= link_to poverty_acumen_path do %>
                 <img class="img-responsive img-customer" src="img/acumen.jpeg.png">
-            </a>
+            <% end %>
         </div>
 
         <div class="col-sm-3 col-xs-6">
-            <a href="poverty_item_MERCY-CORPS.html">
+            <%= link_to poverty_acumen_path do %>
                 <img class="img-responsive img-customer" src="https://www.jivesoftware.com/wp-content/uploads/2014/09/MercyCorps_Color-300x240.png">
-            </a>
+            <% end %>
         </div>
 
         <div class="col-sm-3 col-xs-6">
-            <a href="health_item_HI.html">
+            <%= link_to health_handicap_international_path do %>
                 <img class="img-responsive img-customer" src="http://www.handicap-international.org.uk/OneStopCMS/Sites/Handicap/Theme/images/logo.gif">
-            </a>
+            <% end %>
         </div>
 
     </div>

@@ -1,17 +1,15 @@
 <% title = "Education" %>
 <% provide(:title,"Portfolio : #{title} ") %>
-<%= page_width = "col-lg-9" %>
-<%= page_offset = "col-lg-offset-1" %>
 
 <div class="container">
     <!-- BREADCRUMB -->
     <div class="row">
         <div class="col-lg-12">
-            <h1 class="page-header"><%= title %>
+            <h1 class="page-header title"><%= title %>
             <small>Get involved in a project</small>
             </h1>
             <ol class="breadcrumb">
-                <li><%= link_to("Home",home_path") %> </li>
+                <li><%= link_to("Home",home_path) %> </li>
                 <li> <a href="#"> Portfolio </a> </li>
                 <li class="active"><%= title %></li>
             </ol>
@@ -20,9 +18,9 @@
     <div class="row">
 
         <div class="col-md-7">
-            <a href="education_item_BC.html">
+            <%= link_to education_barefoot_college_path do %>
                 <center><img class="img-responsive" src="http://www.tomorrowpartners.com/wp-content/uploads/2013/12/logo_barefoot_college_gray_SMALL.png"></center> 
-            </a>
+            <% end %>
         </div>
 
         <div class="col-md-5">
@@ -30,8 +28,10 @@
             <h4>Fund consolidating</h4>
             <p>Barefoot College is a non-governmental organization that has been providing basic services and solutions to problems in rural communities for more than 40 years, with the objective of making them self-sufficient and sustainable. These ‘Barefoot solutions’ can be broadly categorized into the delivery of Solar Electrification, Clean Water, Education, Livelihood Development, and Activism. With a geographic focus on the Least Developed Countries (LDCs), we believe strongly in Empowering Women as agents of sustainable change. </p>
 
-
-            <a class="btn btn-primary" href="education_item_BC.html">View Project <i class="fa fa-angle-right"></i></a>
+            <%= link_to education_barefoot_college_path,class: "btn btn-primary" do %>
+                View Project
+            <i class="fa fa-angle-right"></i>
+        <% end %>
         </div>
 
     </div>
@@ -41,16 +41,18 @@
     <div class="row">
 
         <div class="col-md-7">
-            <a href="education_item_ROTA.html">
+            <%= link_to education_rota_path do %>
                 <img class="img-responsive" src="http://www.dubib.com/news_images/2011/12/162753424.jpg">
-            </a>
+            <% end %>
         </div>
 
         <div class="col-md-5">
-            <h3><a href="http://www.reachouttoasia.org/">REACH OUT TO ASIA (ROTA) </a> </h3>
+            <h3><%= link_to "Education : Reach Out To Asia",education_rota_path %> </h3>
             <h4>Fund consolidating</h4>
             <p>"ROTA has joined the global effort to achieve basic, quality education for both primary and secondary school children throughout Asia and the Middle East - helping local communities overcome major obstacles to the education that can ultimately lead to a better quality of life in Asia."</p>
-            <a class="btn btn-primary" href="#">View Project<i class="fa fa-angle-right"></i></a>
+           <%= link_to education_rota_path, class: "btn btn-primary" do %> 
+                View Project<i class="fa fa-angle-right"></i>
+            <% end %>
         </div>
 
     </div>

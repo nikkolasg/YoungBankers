@@ -1,17 +1,15 @@
 <% title = "Reach Out To Asia" %>
 <% provide(:title,"Portfolio : #{title} ") %>
-<%= page_width = "col-lg-9" %>
-<%= page_offset = "col-lg-offset-1" %>
 
 
 <div class="container">
     <!-- BREADCRUMB -->
     <div class="row">
         <div class="col-lg-12">
-            <h1 class="page-header"><%= title %>
+            <h1 class="page-header title"><%= title %>
         </h1>
         <ol class="breadcrumb">
-            <li><%= link_to("Home",home_path") %> </li>
+            <li><%= link_to("Home",home_path) %> </li>
             <li> <a href="#"> Portfolio </a> </li>
             <li><%=link_to("Health & Hygiene",hygiene_health_path) %></li>
             <li class="active"><%= title %></li>
@@ -79,9 +77,9 @@
         </div>
 
         <div class="col-sm-3 col-xs-6">
-            <a href="education_item_BC.html">
+            <%= link_to education_barefoot_college_path do %>
                 <img class="img-responsive img-customer" src="http://www.tomorrowpartners.com/wp-content/uploads/2013/12/logo_barefoot_college_gray_SMALL.png">
-            </a>
+            <% end %>
         </div>
 
     </div>

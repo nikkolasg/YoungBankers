@@ -1,19 +1,17 @@
 <% title = "Barefoot College" %>
 <% provide(:title,"Portfolio : #{title} ") %>
-<%= page_width = "col-lg-9" %>
-<%= page_offset = "col-lg-offset-1" %>
 
 
 <div class="container">
     <!-- BREADCRUMB -->
     <div class="row">
         <div class="col-lg-12">
-            <h1 class="page-header"><%= title %>
+            <h1 class="page-header title"><%= title %>
         </h1>
         <ol class="breadcrumb">
-            <li><%= link_to("Home",home_path") %> </li>
+            <li><%= link_to("Home",home_path) %> </li>
             <li> <a href="#"> Portfolio </a> </li>
-            <li><%=link_to("Health & Hygiene",hygiene_health_path) %></li>
+            <li><%=link_to("Health & Hygiene",portfolio_health_hygiene_path) %></li>
             <li class="active"><%= title %></li>
         </ol>
         </div>
@@ -60,9 +58,9 @@
         </div>
 
         <div class="col-sm-3 col-xs-6">
-            <a href="education_item_ROTA.html">
+            <%= link_to education_rota_path do %>
                 <img class="img-responsive img-customer" src="http://www.reachouttoasia.org/sites/default/files/zen_rota_logo.png">
-            </a>
+            <% end %>
         </div>
     </div>
 
